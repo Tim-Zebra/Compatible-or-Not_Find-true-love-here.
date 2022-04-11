@@ -2,11 +2,10 @@
 UT Bootcamp Collaborative Project #1
 
 Collaborators:
-Timothy Zalewski
-https://github.com/Tim-Zebra
-Abigail Asaju
-Jace Feinstein
-Robert Leland
+Timothy Zalewski: https://github.com/Tim-Zebra
+Jace Feinstein: https://github.com/jacef790
+Abigail Asaju: https://github.com/Abigail709
+Robert Leland: https://github.com/RLeland12
 
 Description:
 
@@ -23,4 +22,8 @@ Link to Deployed Page:
 References:
 
 
-Development Process (See commits for more details):
+Development Process:
+Created group github Repo
+Setup base repo
+Submitted project proposal
+Wireframed html layout
