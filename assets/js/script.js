@@ -27,3 +27,9 @@ fetch('https://api-baseball.p.rapidapi.com/leagues?name=mlb', options)
 
     console.log(leagues);
     console.log(options);
+
+	// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Third Page///////////////////////////////////////
+	// Obtain list of players
+	// Obtain stats of players
+	// Compare stats of players
+	// 
