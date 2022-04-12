@@ -1,4 +1,9 @@
-// Get API Key
+// Global variables for API pull
+var loveAPIObject = null;
+var jokeAPIObject = null;
+var weatherAPIObject = null;
+
+// Get love compatibility API
 const options = {
 	method: 'GET',
 	headers: {
@@ -13,4 +18,3 @@ fetch('https://love-calculator.p.rapidapi.com/getPercentage?sname=Alice&fname=Jo
 	.catch(err => console.error(err));
 
 
-	// 
