@@ -1,6 +1,17 @@
 # 01_Student-Project
 UT Bootcamp Collaborative Project #1
 
+## User Story
+
+```
+AS A baseball enthusiast
+I WANT a dashboard to create and store my fantasy team info
+SO THAT I can track their stats
+```
+
+
+
+
 Collaborators:
 Timothy Zalewski: https://github.com/Tim-Zebra
 Jace Feinstein: https://github.com/jacef790
