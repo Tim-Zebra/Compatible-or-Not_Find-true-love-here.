@@ -32,4 +32,9 @@ fetch('https://api-baseball.p.rapidapi.com/leagues?name=mlb', options)
 	// Obtain list of players
 	// Obtain stats of players
 	// Compare stats of players
-	// 
+	// Drop down box to choose players to compare https://jqueryui.com/selectmenu/#default
+	$( function() {
+		$( "#speed" ).selectmenu();
+	 
+		$( "#files" ).selectmenu();
+	});
