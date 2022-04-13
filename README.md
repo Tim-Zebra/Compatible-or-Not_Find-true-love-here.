@@ -4,15 +4,21 @@ UT Bootcamp Collaborative Project #1
 ## User Story
 
 ```
-AS A
-I WANT 
-SO THAT 
+AS A a person seeking love...
+I WANT an app that will help me find a good match based on our names, and help me some out with some first date topics.
+SO THAT I can find my soul mate.
 ```
 
 ## Acceptance Criteria
 
 ```
-GIVEN 
+GIVEN a compatibility checker with form inputs
+WHEN I type in mine and my soul mates name
+THEN I am presented with a compatibility percentage
+WHEN I am presented with the percentage
+THEN I am given counsel on the result
+WHEN I select a topic for discussion
+THEN I am presented with a random fact (from API)
 ```
 
 ## About
@@ -36,10 +42,12 @@ Link to Deployed Page:
 
 
 References:
-Jquery UI obtained from: https://jqueryui.com/selectmenu/#default
+
 
 Development Process:
+Implemented a Kanban board
 Created group github Repo
 Setup base repo
 Submitted project proposal
-Wireframed html layout
+Wireframed project
+Created base HTML layout
