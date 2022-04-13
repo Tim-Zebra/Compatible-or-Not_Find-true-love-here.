@@ -69,12 +69,6 @@ function getJokeCriteriaInput () {
         }
     }
     return storedObject;
-
-    obj.name1 = firstName;
-    obj.name2 = secondName;
-
-    return obj;
-
 }
 
 // Takes in a single string of letters and capatalizes the first letter
@@ -158,7 +152,24 @@ function displayJoke(onePart, twoPartSet, twoPartDel) {
 // Listens for button submit on checkboxes
 jokeCheckBoxSubmitEl.on('click', getJoke);
 
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Compatibility Seciton//////////////////////////////////
+// Returns compatibility as an object with both names and a score
+function createCompatibilityObj () {
+    var obj = getUserInput();
+    // ***Need to make a function that fetches the score.
+    obj.score = fetchScore;
+    
+    compatibilityScore(obj.score);
+    return obj;
+}
 
+function compatibilityScore (score) {
+    return score;
+}
+
+// Returns compatibility 
+// Listens for the form submit button to be pressed
+compatibilityFormEl.on('submit', createCompatibilityObj);
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\API FETCHING/////////////////////////////////////////
 // // Love Compatability API
 getLove();
@@ -178,23 +189,7 @@ function getLove () {
 
 // Activity API
 
-// Returns compatibility as an object with both names and a score
-function createCompatibilityObj () {
-    var obj = getUserInput();
-    // ***Need to make a function that fetches the score.
-    obj.score = fetchScore;
-    
-    compatibilityScore(obj.score);
-    return obj;
-}
 
-function compatibilityScore (score) {
-    return score;
-}
-
-// Returns compatibility 
-// Listens for the form submit button to be pressed
-compatibilityFormEl.on('submit', createCompatibilityObj);
 
 const loveAPI = {
 	method: 'GET',
@@ -289,4 +284,4 @@ function updateProgressBar(progressBar, value) {
 
 console.log
 
-document.getElementById('#btn').addEventListener(onclick, updateProgressBar);
+document.getElementById('#btn').addEventListener('click', updateProgressBar);
