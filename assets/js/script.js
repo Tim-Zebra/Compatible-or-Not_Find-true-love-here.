@@ -85,10 +85,22 @@ function capitalizeFirstLetter (word) {
 }
 
 // Returns compatibility as an object with both names and a score
-function createCompatibilityObj (nameOne, name2, score)
+function createCompatibilityObj () {
+    var obj = getUserInput();
+    // ***Need to make a function that fetches the score.
+    obj.score = fetchScore;
+    
+    compatibilityScore(obj.score);
+    return obj;
+}
 
+function compatibilityScore (score) {
+    return score;
+}
+
+// Returns compatibility 
 // Listens for the form submit button to be pressed
-compatibilityFormEl.on('submit', getUserInput);
+compatibilityFormEl.on('submit', createCompatibilityObj);
 
 const loveAPI = {
 	method: 'GET',
