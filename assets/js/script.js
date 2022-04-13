@@ -3,6 +3,7 @@ var loveAPIObject = "";
 var dateAPIObject = "";
 var weatherAPIObject = "";
 var ExchangeApiObject = "";
+
 // var ActivityApi = "";
 
 // Get love compatibility API
