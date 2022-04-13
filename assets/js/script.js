@@ -17,6 +17,7 @@ var fetchedScore = 36;
 function getNamesInput (event) {
     event.preventDefault();
 	// defined variables
+    var obj = {};
     var firstName = '';
 	var secondName = '';
 
@@ -29,14 +30,10 @@ function getNamesInput (event) {
         // Capitalizes first letter of name
 		firstName = capitalizeFirstLetter(firstName);
 		secondName = capitalizeFirstLetter(secondName);
-
-        // Send Results to HTML
-        var pEl = $("<p>" + fetchedScore + "<p>");
-
-        compatibilitySectionEl.append(pEl);
     }
     firstNameEl.val('');
     secondNameEl.val('');
+
 
 	console.log(firstName, "\n", secondName);
 
@@ -72,6 +69,12 @@ function getJokeCriteriaInput () {
         }
     }
     return storedObject;
+
+    obj.name1 = firstName;
+    obj.name2 = secondName;
+
+    return obj;
+
 }
 
 // Takes in a single string of letters and capatalizes the first letter
@@ -84,6 +87,7 @@ function capitalizeFirstLetter (word) {
 
 	return newWord;
 }
+
 
 // Gets joke criteria, gets joke fetch, displays joke
 async function getJoke () {
@@ -173,6 +177,44 @@ function getLove () {
 }
 
 // Activity API
+
+// Returns compatibility as an object with both names and a score
+function createCompatibilityObj () {
+    var obj = getUserInput();
+    // ***Need to make a function that fetches the score.
+    obj.score = fetchScore;
+    
+    compatibilityScore(obj.score);
+    return obj;
+}
+
+function compatibilityScore (score) {
+    return score;
+}
+
+// Returns compatibility 
+// Listens for the form submit button to be pressed
+compatibilityFormEl.on('submit', createCompatibilityObj);
+
+const loveAPI = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Host': 'love-calculator.p.rapidapi.com',
+		'X-RapidAPI-Key': 'd7b52d453cmsh879a19108989e7bp13154cjsn9c9ddd1cbe5d'
+	}
+};
+
+fetch('https://love-calculator.p.rapidapi.com/getPercentage?', loveAPI)
+	.then(response => response.json())
+	.then(response => console.log(response))
+	.then(function (response){
+		loveAPIObject = response;
+		console.log(loveAPIInfo);
+	})
+	.catch(err => console.error(err));
+
+// Joke API
+
 // example pull https://www.boredapi.com/api/activity
 // const dateAPI = {
 // 	method: 'GET',
