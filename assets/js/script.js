@@ -84,7 +84,7 @@ function capitalizeFirstLetter (word) {
 // Listens for the form submit button to be pressed
 compatibilityFormEl.on('submit', getNamesInput);
 // Listens for button submit on checkboxes
-jokeCheckBoxSubmitEl.on('click', getJokeCriteriaInput);
+jokeCheckBoxSubmitEl.on('click', getJoke);
 
 
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\API FETCHING/////////////////////////////////////////
@@ -124,27 +124,52 @@ function getLove () {
 // 	.catch(err => console.error(err));
 
 // Joke API function
-getJoke();
+// https://v2.jokeapi.dev/
+
 function getJoke () {
 	var jokeSectionJokeEl = $('#jokeSectionJoke');
-	
-	const jokeAPI = {
-		method: 'GET',
-		headers: {
-			'X-RapidAPI-Host': 'https://v2.jokeapi.dev/',
-			'X-RapidAPI-Key': ''
-		}
-	};
+	var searchCriteria = '';
 
-	fetch('https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit', jokeAPI)
-		.then(response => response.json())
-		.then(response => console.log(response))
-		.then(function (data) {
-			jokeAPIObject = data;
-			console.log(jokeAPIObject);
-		})
-		.catch(err => console.error(err));
-		jokeSectionJokeEl.value
+    // gets joke parameters
+    var checkedOptions = getJokeCriteriaInput ();
+    var objKeys = Object.keys(checkedOptions);
+    
+    // checks is any parameters were selected, if not then just searches all ('any')
+    for (var i = 0; i < objKeys.length; i++) {
+        if (checkedOptions[objKeys[i]] === true) {
+            searchCriteria += objKeys[i] + ',';
+        }
+    }
+
+    // Removes last ',' from string
+    searchCriteria = searchCriteria.slice(0, -1);    
+
+console.log(searchCriteria);
+
+    // Prevents error if someone doesn't check any boxes
+    if (searchCriteria === '') {
+        searchCriteria = 'any';
+    }
+
+
+    // // fetch from API
+	// const jokeAPI = {
+	// 	method: 'GET',
+	// 	headers: {
+	// 		'X-RapidAPI-Host': 'https://v2.jokeapi.dev/',
+	// 		'X-RapidAPI-Key': ''
+	// 	}
+	// };
+
+	// fetch('https://v2.jokeapi.dev/joke/' + searchCriteria + '?blacklistFlags=nsfw,religious,political,racist,sexist,explicit', jokeAPI)
+	// 	.then(response => response.json())
+	// 	.then(response => console.log(response))
+	// 	.then(function (data) {
+	// 		jokeAPIObject = data;
+	// 		console.log(jokeAPIObject);
+	// 	})
+	// 	.catch(err => console.error(err));
+	// 	jokeSectionJokeEl.value
 }
 // Get Input from HTML check boxes
 
