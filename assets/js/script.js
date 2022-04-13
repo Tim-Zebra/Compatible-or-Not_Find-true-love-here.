@@ -133,6 +133,24 @@ function updateProgressBar(progressBar, value) {
   const myProgressBar = document.querySelector(".progress");
   // test, need to pass love value to replace 55
   updateProgressBar(myProgressBar, 55);
+// Bored Api Random Activity Generator 
+// example pull https://rapidapi.com/dannyboy96s/api/random-activity-generator/
+	Activity();
+	function Activity() {
+		const optionsActivityApi = {
+			method: 'GET',
+			headers: {
+				'X-RapidAPI-Host': 'random-activity-generator.p.rapidapi.com',
+				'X-RapidAPI-Key': 'fbd5c241ffmsh7b20ec77aee88dfp1bd3f2jsncc309ee32ffd'
+			}
+		};
+		
+		fetch('https://random-activity-generator.p.rapidapi.com/v1/random-activity', optionsActivityApi)
+			.then(response => response.json())
+			.then(response => console.log(response))
+			.catch(err => console.error(err));
+	}
 
+console.log
 
 document.getElementById('#btn').addEventListener(onclick, updateProgressBar);
