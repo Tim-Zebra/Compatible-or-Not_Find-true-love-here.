@@ -2,6 +2,7 @@
 var loveAPIObject = "";
 var dateAPIObject = "";
 var weatherAPIObject = "";
+var ActivityApi = "";
 
 // Get love compatibility API
 // example pull https://love-calculator.p.rapidapi.com/getPercentage?sname=Alice&fname=John'
@@ -34,9 +35,10 @@ fetch('https://www.boredapi.com/api/activity', options)
 	.catch(err => console.error(err));
 
 // Bored Api Random Activity Generator 
+// example pull https://rapidapi.com/dannyboy96s/api/random-activity-generator/
 	Activity();
 	function Activity() {
-		const optionsActivity = {
+		const optionsActivityApi = {
 			method: 'GET',
 			headers: {
 				'X-RapidAPI-Host': 'random-activity-generator.p.rapidapi.com',
@@ -44,11 +46,11 @@ fetch('https://www.boredapi.com/api/activity', options)
 			}
 		};
 		
-		fetch('https://random-activity-generator.p.rapidapi.com/v1/random-activity', optionsActivity)
+		fetch('https://random-activity-generator.p.rapidapi.com/v1/random-activity', optionsActivityApi)
 			.then(response => response.json())
 			.then(response => console.log(response))
 			.catch(err => console.error(err));
 	}
 
-
+console.log
 
