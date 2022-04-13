@@ -44,6 +44,10 @@ function getNamesInput (event) {
     getCheckBoxInfo();
 }
 
+// Listens for the form submit button to be pressed
+compatibilityFormEl.on('submit', getNamesInput);
+
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Joke Section//////////////////////////////////////////////////
 // Gets check box results and returns an object. Key = name of box: Value = boolean
 function getJokeCriteriaInput () {
     // Assigns variables for categories of jokes
@@ -81,8 +85,51 @@ function capitalizeFirstLetter (word) {
 	return newWord;
 }
 
-// Listens for the form submit button to be pressed
-compatibilityFormEl.on('submit', getNamesInput);
+// Gets joke criteria, gets joke fetch, displays joke
+async function getJoke () {
+	var jokeSectionJokeEl = $('#jokeSectionJoke');
+	var searchCriteria = '';
+
+    // gets joke parameters
+    var checkedOptions = getJokeCriteriaInput ();
+    var objKeys = Object.keys(checkedOptions);
+    
+    // checks is any parameters were selected, if not then just searches all ('any')
+    for (var i = 0; i < objKeys.length; i++) {
+        if (checkedOptions[objKeys[i]] === true) {
+            searchCriteria += objKeys[i] + ',';
+        }
+    }
+
+    // Removes last ',' from string
+    searchCriteria = searchCriteria.slice(0, -1);    
+
+    // Prevents error if someone doesn't check any boxes
+    if (searchCriteria === '') {
+        searchCriteria = 'any';
+    }
+
+    // Creates option to display one and two part jokes
+    // fetch from API
+    var onePartJoke = await fetchJoke (searchCriteria, '&type=single');
+    var twoPartJoke = await fetchJoke (searchCriteria, '&type=twopart');
+
+    console.log(onePartJoke);
+    console.log(twoPartJoke);
+
+    // Sets Joke Variables
+    onePartJoke = onePartJoke.joke;
+    twoPartJokeSetup = twoPartJoke.setup;
+    twoPartJokeDelivery = twoPartJoke.delivery;
+
+    // displays joke
+    displayJoke (onePartJoke, twoPartJokeSetup, twoPartJokeDelivery);
+}
+
+function displayJoke(onePart, twoPartSet, twoPartDel) {
+    
+}
+
 // Listens for button submit on checkboxes
 jokeCheckBoxSubmitEl.on('click', getJoke);
 
@@ -126,52 +173,28 @@ function getLove () {
 // Joke API function
 // https://v2.jokeapi.dev/
 
-function getJoke () {
-	var jokeSectionJokeEl = $('#jokeSectionJoke');
-	var searchCriteria = '';
-
-    // gets joke parameters
-    var checkedOptions = getJokeCriteriaInput ();
-    var objKeys = Object.keys(checkedOptions);
-    
-    // checks is any parameters were selected, if not then just searches all ('any')
-    for (var i = 0; i < objKeys.length; i++) {
-        if (checkedOptions[objKeys[i]] === true) {
-            searchCriteria += objKeys[i] + ',';
-        }
-    }
-
-    // Removes last ',' from string
-    searchCriteria = searchCriteria.slice(0, -1);    
-
-console.log(searchCriteria);
-
-    // Prevents error if someone doesn't check any boxes
-    if (searchCriteria === '') {
-        searchCriteria = 'any';
-    }
 
 
-    // // fetch from API
-	// const jokeAPI = {
-	// 	method: 'GET',
-	// 	headers: {
-	// 		'X-RapidAPI-Host': 'https://v2.jokeapi.dev/',
-	// 		'X-RapidAPI-Key': ''
-	// 	}
-	// };
+async function fetchJoke (criteria, parts) {
+	var fetchedObj = {};
 
-	// fetch('https://v2.jokeapi.dev/joke/' + searchCriteria + '?blacklistFlags=nsfw,religious,political,racist,sexist,explicit', jokeAPI)
-	// 	.then(response => response.json())
-	// 	.then(response => console.log(response))
-	// 	.then(function (data) {
-	// 		jokeAPIObject = data;
-	// 		console.log(jokeAPIObject);
-	// 	})
-	// 	.catch(err => console.error(err));
-	// 	jokeSectionJokeEl.value
+    const jokeAPI = {
+		method: 'GET',
+		headers: {
+			'X-RapidAPI-Host': 'https://v2.jokeapi.dev/',
+			'X-RapidAPI-Key': ''
+		}
+	};
+
+	await fetch('https://v2.jokeapi.dev/joke/' + criteria + '?blacklistFlags=nsfw,religious,political,racist,sexist,explicit' + parts, jokeAPI)
+		.then(response => response.json())
+		.then(function (data) {
+            fetchedObj = data;
+		})
+		.catch(err => console.error(err));
+
+    return fetchedObj;
 }
-// Get Input from HTML check boxes
 
 
 // progress bar
