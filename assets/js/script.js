@@ -29,7 +29,7 @@ const dateAPI = {
 	}
 };
 
-fetch('https://www.boredapi.com/api/activity', options)
+fetch('https://www.boredapi.com/api/activity', optionsLove)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
