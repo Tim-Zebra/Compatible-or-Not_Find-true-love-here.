@@ -146,23 +146,23 @@ jokeCheckBoxSubmitEl.on('click', getJoke);
 
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Compatibility Seciton//////////////////////////////////
 // Returns compatibility as an object with both names and a score
-function createCompatibilityObj (event) {
+async function createCompatibilityObj (event) {
     var obj = getNamesInput(event);
     // ***Need to make a function that fetches the score.
-    obj.score = 1;
-    console.log(obj);
+    obj.score = await fetchLove(obj.name1, obj.name2);
     return obj;
 }
 
 // Returns compatibility 
-function compatibility (event) {
+async function compatibility (event) {
     event.preventDefault();
-    var obj = createCompatibilityObj(event);
+    var obj = await createCompatibilityObj(event);
     
+    console.log(obj);
     // Adds progress to HMTL
     const myProgressBar = document.querySelector(".progress");
+    console.log(myProgressBar);
     updateProgressBar(myProgressBar, obj.score);
-
 }
 
 // Updates progress bar
@@ -175,7 +175,7 @@ compatibilityFormEl.on('submit', compatibility);
 
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\API FETCHING/////////////////////////////////////////
 // // Love Compatability API
-function fetchLove (name1, name2) {
+async function fetchLove (name1, name2) {
     const optionsLove = {
         method: 'GET',
         headers: {
@@ -183,13 +183,15 @@ function fetchLove (name1, name2) {
             'X-RapidAPI-Key': 'd7b52d453cmsh879a19108989e7bp13154cjsn9c9ddd1cbe5d'
         }
     };
-    fetch('https://love-calculator.p.rapidapi.com/getPercentage?sname=' + name1 + '&fname=' + name2, optionsLove)
+    await fetch('https://love-calculator.p.rapidapi.com/getPercentage?sname=' + name1 + '&fname=' + name2, optionsLove)
     .then(response => response.json())
     .then(function (data) {
         loveAPIObject = data;
         console.log(data);
     })
     .catch(err => console.error(err));
+
+    return loveAPIObject.percentage;
 }
 
 // Joke API function
@@ -214,8 +216,6 @@ async function fetchJoke (criteria, parts) {
 
     return fetchedObj;
 }
-
-
 // Random Activity Generator
 // example pull https://rapidapi.com/dannyboy96s/api/random-activity-generator/
 // Activity();
