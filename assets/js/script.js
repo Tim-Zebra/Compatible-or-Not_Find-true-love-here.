@@ -93,8 +93,8 @@ function getLove () {
 // 	.catch(err => console.error(err));
 
 // Joke API function
-getJoke(testCategories);
-function getJoke (categories) {
+getJoke();
+function getJoke () {
 	var jokeSectionJokeEl = $('#jokeSectionJoke');
 	
 	const jokeAPI = {
@@ -115,6 +115,11 @@ function getJoke (categories) {
 		.catch(err => console.error(err));
 		jokeSectionJokeEl.value
 }
+// Get Input from HTML check boxes
+// This function is required by JQuery UI: https://jqueryui.com/checkboxradio/ 
+$( function() {
+    $( "input" ).checkboxradio();
+  } );
 
 // progress bar
 function updateProgressBar(progressBar, value) {

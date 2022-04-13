@@ -7,7 +7,8 @@
         <title>Love Checker!</title>
         <link rel="icon" type="image/x-icon" href="./assets/images/favicons/faviconLove.png" id="favicon">
 
-        <!-- CSS Frameworks: Foundation-CSS, style.css -->
+        <!-- CSS Frameworks: JQueryUI.css, Foundation-CSS, style.css -->
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
         <link rel="stylesheet" href="./assets/css/style.css">
     </head>
@@ -51,11 +52,27 @@
           <div class="progress-fill"></div>
           <span class="progress-text">0%</span>
         </div>
-
+      </section>
         <!-- Joke - Section -->
-        <section>
+        <!-- <section class="widget"> -->
           <h3>-----------JOKE---------------</h3>
           <!-- Here are the options for the type of joke -->
+          <h2>Checkbox</h2>
+          <fieldset>
+            <legend>Filter to your stlye of jokes: </legend>
+            <label for="checkbox-1">Programming</label>
+            <input type="checkbox" name="checkbox-1" id="jokeProgrammingBox">
+            <label for="checkbox-2">Misc</label>
+            <input type="checkbox" name="checkbox-2" id="jokeMiscBox">
+            <label for="checkbox-3">Dark</label>
+            <input type="checkbox" name="checkbox-3" id="jokeDarkBox">
+            <label for="checkbox-4">Pun</label>
+            <input type="checkbox" name="checkbox-4" id="jokePunBox">
+            <label for="checkbox-5">Spooky</label>
+            <input type="checkbox" name="checkbox-5" id="jokeSpookyBox">
+            <label for="checkbox-6">Christmas</label>
+            <input type="checkbox" name="checkbox-6" id="jokeChristmasBox">
+          </fieldset>
           <!-- Here a joke will be displayed -->
           <p id="jokeSectionJoke"></p>
         </section>
