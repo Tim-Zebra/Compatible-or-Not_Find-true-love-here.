@@ -9,12 +9,12 @@ var compatibilityFormEl = $('#compatibilityForm');
 var firstNameEl = $('#firstName');
 var secondNameEl = $('#secondName');
 var compatibilitySectionEl = $('#compatibilitySection');
-
+var jokeCheckBoxSubmitEl = $('#jokeCheckBoxSubmit');
 
 // API result placeholder
 var fetchedScore = 36;
 // Gets input from user
-function getUserInput (event) {
+function getNamesInput (event) {
     event.preventDefault();
 	// defined variables
     var firstName = '';
@@ -39,6 +39,40 @@ function getUserInput (event) {
     secondNameEl.val('');
 
 	console.log(firstName, "\n", secondName);
+
+    // This gets the info from the checkboxes.
+    getCheckBoxInfo();
+}
+
+function getJokeCriteriaInput () {
+    // Assigns variables for categories of jokes
+    var jokeProgrammingBoxCheck = document.getElementById('jokeProgrammingBox').checked;
+    var jokeMiscBoxCheck = document.getElementById('jokeMiscBox').checked;
+    var jokeDarkBoxCheck = document.getElementById('jokeDarkBox').checked;
+    var jokePunBoxCheck = document.getElementById('jokePunBox').checked;
+    var jokeSpookyBoxCheck = document.getElementById('jokeSpookyBox').checked;
+    var jokeChristmasBoxCheck = document.getElementById('jokeChristmasBox').checked;
+
+    var arrayBoxes = [jokeProgrammingBoxCheck, jokeMiscBoxCheck, jokeDarkBoxCheck, jokePunBoxCheck, jokeSpookyBoxCheck, jokeChristmasBoxCheck]
+    var storedObject = {};
+    
+    // Checks if checked or not and creates an object
+    for (var k = 0; k < arrayBoxes.length; k++) {
+        var string = arrayBoxes[k];
+        // if (arrayBoxes[k].checked === true) {
+        //     storedObject.arrayBoxes[k] = true;
+        // }
+        // else {
+        //     storedObject.arrayBoxes[k] = false;
+        // }
+        console.log(string);
+        console.log(typeof string);
+    }
+
+    console.log (storedObject);
+
+
+
 }
 
 // Takes in a single string of letters
@@ -53,7 +87,9 @@ function capitalizeFirstLetter (word) {
 }
 
 // Listens for the form submit button to be pressed
-compatibilityFormEl.on('submit', getUserInput);
+compatibilityFormEl.on('submit', getNamesInput);
+// Listens for button submit on checkboxes
+jokeCheckBoxSubmitEl.on('click', getJokeCriteriaInput);
 
 
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\API FETCHING/////////////////////////////////////////
@@ -116,10 +152,7 @@ function getJoke () {
 		jokeSectionJokeEl.value
 }
 // Get Input from HTML check boxes
-// This function is required by JQuery UI: https://jqueryui.com/checkboxradio/ 
-$( function() {
-    $( "input" ).checkboxradio();
-  } );
+
 
 // progress bar
 function updateProgressBar(progressBar, value) {
@@ -130,3 +163,4 @@ function updateProgressBar(progressBar, value) {
   const myProgressBar = document.querySelector(".progress");
   // test, need to pass love value to replace 55
   updateProgressBar(myProgressBar, 55);
+  
