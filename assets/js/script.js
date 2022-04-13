@@ -216,40 +216,20 @@ async function fetchJoke (criteria, parts) {
 
     return fetchedObj;
 }
-// Random Activity Generator
-// example pull https://rapidapi.com/dannyboy96s/api/random-activity-generator/
-// Activity();
-// function Activity() {
-//     const optionsActivityApi = {
-//         method: 'GET',
-//         headers: {
-//             'X-RapidAPI-Host': 'random-activity-generator.p.rapidapi.com',
-//             'X-RapidAPI-Key': 'fbd5c241ffmsh7b20ec77aee88dfp1bd3f2jsncc309ee32ffd'
-//         }
-//     };
-    
-//     fetch('https://random-activity-generator.p.rapidapi.com/v1/random-activity', optionsActivityApi)
-//         .then(response => response.json())
-//         .then(response => console.log(response))
-//         .catch(err => console.error(err));
-// }
 
-
+// Pulls up a random Activity
 // example pull https://www.boredapi.com/api/activity
-// const dateAPI = {
-// 	method: 'GET',
-// 	headers: {
-// 		'X-RapidAPI-Host': 'https://www.boredapi.com/api/activity',
-// 		'X-RapidAPI-Key': ''
-// 	}
-// };
+function fetchActivity () {
+    fetch('https://www.boredapi.com/api/activity')
+	.then(response => response.json())
+	.then(function (data){
+		console.log(data);
+	})
+	.catch(err => console.error(err));
+}
 
-// fetch('https://www.boredapi.com/api/activity')
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.then(function (response){
-// 		dateAPIObject = response;
-// 		console.log(dateAPIObject);
-// 	})
-// 	.catch(err => console.error(err));
+fetchActivity();
+
+
+
 
