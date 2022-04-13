@@ -50,6 +50,7 @@ var fetchedScore = 36;
 function getUserInput (event) {
     event.preventDefault();
 	// defined variables
+    var obj = {};
     var firstName = '';
 	var secondName = '';
 
@@ -62,16 +63,14 @@ function getUserInput (event) {
         // Capitalizes first letter of name
 		firstName = capitalizeFirstLetter(firstName);
 		secondName = capitalizeFirstLetter(secondName);
-
-        // Send Results to HTML
-        var pEl = $("<p>" + fetchedScore + "<p>");
-
-        compatibilitySectionEl.append(pEl);
     }
     firstNameEl.val('');
     secondNameEl.val('');
 
-	console.log(firstName, "\n", secondName);
+    obj.name1 = firstName;
+    obj.name2 = secondName;
+
+    return obj;
 }
 
 // Takes in a single string of letters
@@ -84,6 +83,9 @@ function capitalizeFirstLetter (word) {
 
 	return newWord;
 }
+
+// Returns compatibility as an object with both names and a score
+function createCompatibilityObj (nameOne, name2, score)
 
 // Listens for the form submit button to be pressed
 compatibilityFormEl.on('submit', getUserInput);
