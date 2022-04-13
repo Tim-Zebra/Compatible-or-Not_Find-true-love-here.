@@ -1,6 +1,6 @@
 // Global variables for API pull
-var loveAPIObject = ''
-var dateAPIObject = ''
+var loveAPIObject = '';
+var dateAPIObject = '';
 var jokeAPIObject = '';
 
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Form Submission//////////////////////////////////////
@@ -74,7 +74,7 @@ function getJokeCriteriaInput () {
     return storedObject;
 }
 
-// Takes in a single string of letters
+// Takes in a single string of letters and capatalizes the first letter
 function capitalizeFirstLetter (word) {
 	var newWord = '';
 	var arr = word.split('');
@@ -88,6 +88,8 @@ function capitalizeFirstLetter (word) {
 // Gets joke criteria, gets joke fetch, displays joke
 async function getJoke () {
 	var jokeSectionJokeEl = $('#jokeSectionJoke');
+    // Removes any jokes already inplace.
+    jokeSectionJokeEl.empty();
 	var searchCriteria = '';
 
     // gets joke parameters
@@ -127,7 +129,26 @@ async function getJoke () {
 }
 
 function displayJoke(onePart, twoPartSet, twoPartDel) {
-    
+    var jokeSectionJokeEl = $('#jokeSectionJoke');
+    // Creates first Joke Section
+    var divOne = $('<div></div>');
+    var headOne = $('<h3>Witty Joke: </h3>');
+    var paraOne = $('<p>' + onePart + '</p>');
+
+    // Appends first joke
+    divOne.append(headOne);
+    divOne.append(paraOne);
+    jokeSectionJokeEl.append(divOne);
+
+    // Creates second joke
+    var divTwo = $('<div></div>');
+    var headTwo = $('<h3>Interactive Joke: </h3>');
+    var paraTwo = $('<p>' + twoPartSet + '</p>' + '\n' + '<p>' + twoPartDel + '</p>');
+
+    // Appends second joke
+    divTwo.append(headTwo);
+    divTwo.append(paraTwo);
+    jokeSectionJokeEl.append(divTwo);
 }
 
 // Listens for button submit on checkboxes
