@@ -5,7 +5,7 @@
 
         <!-- Tab title + favicon -->
         <title>Love Checker!</title>
-        <link rel="icon" type="image/x-icon" href="./assets/images/favicons/faviconBaseball.ico" id="favicon">
+        <link rel="icon" type="image/x-icon" href="./assets/images/favicons/faviconLove.png" id="favicon">
 
         <!-- CSS Frameworks: Foundation-CSS, style.css -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
@@ -16,11 +16,37 @@
       <!-- Slide 1 - Header/Intro -->
       <header>
           <h1>Love</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias blanditiis labore itaque cum nisi! Vel et id ducimus optio pariatur officiis enim. Eius deserunt voluptatem sequi ad laboriosam quisquam perspiciatis?</p>
+          <p>Can you find it before it finds you?</p>
       </header>
 
       <!-- Body of Content -->
       <main>
+ compatibilityForm
+        <!-- Enter names for compatibility -->
+        <section id="compatibilitySection">
+          <!-- Compatability form -->
+          <h1>-----------Compatability FORM-----------</h1>
+          <form id="compatibilityForm">
+            <div class="grid-container">
+              <div class="grid-x grid-padding-x">
+                <!-- First Box -->
+                <div class="medium-6 cell">
+                  <label>Enter your name:
+                    <input type="text" id="firstName" placeholder="Your name...">
+                  </label>
+                </div>
+                <!-- Second Box -->
+                <div class="medium-6 cell">
+                  <label>Enter the name of your true love:
+                    <input type="text" id="secondName" placeholder="Their name...">
+                  </label>
+                </div>
+              </div>
+            </div>
+            <!-- Button to submit the form -->
+            <button type="submit" class="submit success button" id="compatibilityFormSearchBtn">Go!</button>
+          </form>
+
 
         <div class="progress">
           <div class="progress-fill"></div>
@@ -32,8 +58,8 @@
 
 
 
+ main
         </section>
-
 
         <section>
 
@@ -50,11 +76,11 @@
 
       </footer>
 
-        <!-- Javascripts: Foundation-KS, Moment, JQuery, JS.script -->
+        <!-- Javascripts: JQuery, Foundation-JS, Moment, JQuery UI, JS.script -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script type="text/javascript" src="./assets/js/script.js"></script>
     </body>
 </html>

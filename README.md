@@ -36,7 +36,7 @@ Link to Deployed Page:
 
 
 References:
-Jquery UI obtained from: https://jqueryui.com/selectmenu/#default
+
 
 Development Process:
 Created group github Repo
