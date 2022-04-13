@@ -44,35 +44,30 @@ function getNamesInput (event) {
     getCheckBoxInfo();
 }
 
+// Gets check box results and returns an object. Key = name of box: Value = boolean
 function getJokeCriteriaInput () {
     // Assigns variables for categories of jokes
-    var jokeProgrammingBoxCheck = document.getElementById('jokeProgrammingBox').checked;
-    var jokeMiscBoxCheck = document.getElementById('jokeMiscBox').checked;
-    var jokeDarkBoxCheck = document.getElementById('jokeDarkBox').checked;
-    var jokePunBoxCheck = document.getElementById('jokePunBox').checked;
-    var jokeSpookyBoxCheck = document.getElementById('jokeSpookyBox').checked;
-    var jokeChristmasBoxCheck = document.getElementById('jokeChristmasBox').checked;
+    var jokeProgrammingBoxCheckEl = document.getElementById('jokeProgrammingBox');
+    var jokeMiscBoxCheckEl = document.getElementById('jokeMiscBox');
+    var jokeDarkBoxCheckEl = document.getElementById('jokeDarkBox');
+    var jokePunBoxCheckEl = document.getElementById('jokePunBox');
+    var jokeSpookyBoxCheckEl = document.getElementById('jokeSpookyBox');
+    var jokeChristmasBoxCheckEl = document.getElementById('jokeChristmasBox');
 
-    var arrayBoxes = [jokeProgrammingBoxCheck, jokeMiscBoxCheck, jokeDarkBoxCheck, jokePunBoxCheck, jokeSpookyBoxCheck, jokeChristmasBoxCheck]
+    var arrayBoxes = [jokeProgrammingBoxCheckEl, jokeMiscBoxCheckEl, jokeDarkBoxCheckEl, jokePunBoxCheckEl, jokeSpookyBoxCheckEl, jokeChristmasBoxCheckEl];
     var storedObject = {};
     
     // Checks if checked or not and creates an object
     for (var k = 0; k < arrayBoxes.length; k++) {
-        var string = arrayBoxes[k];
-        // if (arrayBoxes[k].checked === true) {
-        //     storedObject.arrayBoxes[k] = true;
-        // }
-        // else {
-        //     storedObject.arrayBoxes[k] = false;
-        // }
-        console.log(string);
-        console.log(typeof string);
+        var name = arrayBoxes[k].name;
+        if (arrayBoxes[k].checked === true) {
+            storedObject[name] = true;
+        }
+        else {
+            storedObject[name] = false;
+        }
     }
-
-    console.log (storedObject);
-
-
-
+    return storedObject;
 }
 
 // Takes in a single string of letters
