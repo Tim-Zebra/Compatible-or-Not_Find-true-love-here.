@@ -317,32 +317,40 @@ async function displayHistory() {
             var name2 = searchHistoryArray[i].name2;
             var compat = searchHistoryArray[i].score;
             
-            // adds values to HTML
-            var addTo = $('<li>' + name1 + ' and ' + name2 + '</li>');
-            var addCompat = $('<p id="searchHistoryProgress' + i + '">' + compat + '</p>');
-            addTo.append(addCompat);
+            // Creates li value for HTML
+            var addTo = document.createElement('li');
+            addTo.textContent = name1 + ' and ' + name2;
+
+
+            // Creates progress bar for HTML
+            var divProg = document.createElement("div");
+            divProg.setAttribute('class', 'progress');
+            divProg.setAttribute('id', 'progress' + i)
+            
+            var divProgFill = document.createElement("div");
+            divProgFill.setAttribute('class', 'progress-fill');
+
+            var spanProg = document.createElement("span");
+            spanProg.setAttribute('class', 'progress-text');
+
+            divProg.appendChild(divProgFill);
+            divProg.appendChild(spanProg);            
+
+            addTo.append(divProg);
             list.append(addTo);
+
+            // Applies fill to progress bar
+            var progressBar = document.getElementById('progress' + i);
+            updateProgressBar(progressBar, compat);
         }
     }
 }
 
-// // Add compatibility status bars to each result
-// function compatStatusBar (score) {
-//     // Adds progress to HMTL
-//     const myProgressBar = document.querySelectorAll(".searchHistoryProgress");
-//     var myProgresBar = $('.searchHistoryProgress');
-//     updateProgressBar(myProgressBar, score);
-//     interpretCompatibilityScore(score);
-// }
-// function compatibility (event) {
-
-// }
-
-// // Updates progress bar
-// function updateProgressBar(progressBar, value) {
-// 	progressBar.querySelector(".progress-fill").style.width = `${value}%`;
-// 	progressBar.querySelector(".progress-text").textContent = `${value}%`;
-// }
+// Updates progress bar
+function updateProgressBar(progressBar, value) {
+	progressBar.querySelector(".progress-fill").style.width = `${value}%`;
+	progressBar.querySelector(".progress-text").textContent = `${value}%`;
+}
 
 // Clears search history list
 function clearSearchHistory () {
