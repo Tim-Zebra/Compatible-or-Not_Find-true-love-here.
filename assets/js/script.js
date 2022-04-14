@@ -28,8 +28,6 @@ function getNamesInput (event) {
 		firstName = capitalizeFirstLetter(firstName);
 		secondName = capitalizeFirstLetter(secondName);
     }
-    firstNameEl.val('');
-    secondNameEl.val('');
 
     obj.name1 = firstName;
     obj.name2 = secondName;
