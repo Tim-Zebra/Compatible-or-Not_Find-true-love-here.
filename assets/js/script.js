@@ -173,8 +173,6 @@ function updateProgressBar(progressBar, value) {
 }
 
 // Interprets compatibility
-// test variables
-interpretCompatibilityScore(100);
 function interpretCompatibilityScore(score) {
     // Links with HTML
     var compatEl = $('#compat-interp');
