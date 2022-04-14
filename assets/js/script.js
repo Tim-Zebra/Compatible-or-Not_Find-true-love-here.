@@ -1,7 +1,6 @@
 // Global variables for API pull
-var loveAPIObject = '';
-var dateAPIObject = '';
-var jokeAPIObject = '';
+var loveAPIObject = {};
+var dateAPIObject = {};
 
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Form Submission//////////////////////////////////////
 // Sets variable for Form Submissions
@@ -11,8 +10,6 @@ var secondNameEl = $('#secondName');
 var compatibilitySectionEl = $('#compatibilitySection');
 var jokeCheckBoxSubmitEl = $('#jokeCheckBoxSubmit');
 
-// API result placeholder
-var fetchedScore = 36;
 // Gets input from user
 function getNamesInput (event) {
     event.preventDefault();
@@ -25,7 +22,7 @@ function getNamesInput (event) {
     if ((firstNameEl.val() !== '') && (secondNameEl.val() !== '')) {
         // Stores user search as an object
         var firstName = firstNameEl.val().toLowerCase();
-        var secondName= secondNameEl.val().toLowerCase();
+        var secondName = secondNameEl.val().toLowerCase();
 
         // Capitalizes first letter of name
 		firstName = capitalizeFirstLetter(firstName);
@@ -34,16 +31,11 @@ function getNamesInput (event) {
     firstNameEl.val('');
     secondNameEl.val('');
 
+    obj.name1 = firstName;
+    obj.name2 = secondName;
 
-	console.log(firstName, "\n", secondName);
-
-    // This gets the info from the checkboxes.
-    getCheckBoxInfo();
+    return obj;
 }
-
-// Listens for the form submit button to be pressed
-compatibilityFormEl.on('submit', getNamesInput);
-
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Joke Section//////////////////////////////////////////////////
 // Gets check box results and returns an object. Key = name of box: Value = boolean
 function getJokeCriteriaInput () {
@@ -69,12 +61,6 @@ function getJokeCriteriaInput () {
         }
     }
     return storedObject;
-
-    obj.name1 = firstName;
-    obj.name2 = secondName;
-
-    return obj;
-
 }
 
 // Takes in a single string of letters and capatalizes the first letter
@@ -158,11 +144,38 @@ function displayJoke(onePart, twoPartSet, twoPartDel) {
 // Listens for button submit on checkboxes
 jokeCheckBoxSubmitEl.on('click', getJoke);
 
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Compatibility Seciton//////////////////////////////////
+// Returns compatibility as an object with both names and a score
+async function createCompatibilityObj (event) {
+    var obj = getNamesInput(event);
+    // ***Need to make a function that fetches the score.
+    obj.score = await fetchLove(obj.name1, obj.name2);
+    return obj;
+}
+
+// Returns compatibility 
+async function compatibility (event) {
+    event.preventDefault();
+    var obj = await createCompatibilityObj(event);
+    
+    console.log(obj);
+    // Adds progress to HMTL
+    const myProgressBar = document.querySelector(".progress");
+    console.log(myProgressBar);
+    updateProgressBar(myProgressBar, obj.score);
+}
+
+// Updates progress bar
+function updateProgressBar(progressBar, value) {
+	progressBar.querySelector(".progress-fill").style.width = `${value}%`;
+	progressBar.querySelector(".progress-text").textContent = `${value}%`;
+}
+// Listens for the form submit button to be pressed
+compatibilityFormEl.on('submit', compatibility);
 
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\API FETCHING/////////////////////////////////////////
 // // Love Compatability API
-getLove();
-function getLove () {
+async function fetchLove (name1, name2) {
     const optionsLove = {
         method: 'GET',
         headers: {
@@ -170,74 +183,19 @@ function getLove () {
             'X-RapidAPI-Key': 'd7b52d453cmsh879a19108989e7bp13154cjsn9c9ddd1cbe5d'
         }
     };
-    fetch('https://love-calculator.p.rapidapi.com/getPercentage?sname=Alice&fname=John', optionsLove)
+    await fetch('https://love-calculator.p.rapidapi.com/getPercentage?sname=' + name1 + '&fname=' + name2, optionsLove)
     .then(response => response.json())
-    .then(response => console.log(response))
+    .then(function (data) {
+        loveAPIObject = data;
+        console.log(data);
+    })
     .catch(err => console.error(err));
+
+    return loveAPIObject.percentage;
 }
-
-// Activity API
-
-// Returns compatibility as an object with both names and a score
-function createCompatibilityObj () {
-    var obj = getUserInput();
-    // ***Need to make a function that fetches the score.
-    obj.score = fetchScore;
-    
-    compatibilityScore(obj.score);
-    return obj;
-}
-
-function compatibilityScore (score) {
-    return score;
-}
-
-// Returns compatibility 
-// Listens for the form submit button to be pressed
-compatibilityFormEl.on('submit', createCompatibilityObj);
-
-const loveAPI = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Host': 'love-calculator.p.rapidapi.com',
-		'X-RapidAPI-Key': 'd7b52d453cmsh879a19108989e7bp13154cjsn9c9ddd1cbe5d'
-	}
-};
-
-fetch('https://love-calculator.p.rapidapi.com/getPercentage?', loveAPI)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.then(function (response){
-		loveAPIObject = response;
-		console.log(loveAPIInfo);
-	})
-	.catch(err => console.error(err));
-
-// Joke API
-
-// example pull https://www.boredapi.com/api/activity
-// const dateAPI = {
-// 	method: 'GET',
-// 	headers: {
-// 		'X-RapidAPI-Host': 'https://www.boredapi.com/api/activity',
-// 		'X-RapidAPI-Key': ''
-// 	}
-// };
-
-// fetch('https://www.boredapi.com/api/activity')
-// 	.then(response => response.json())
-// 	.then(response => console.log(response))
-// 	.then(function (response){
-// 		dateAPIObject = response;
-// 		console.log(dateAPIObject);
-// 	})
-// 	.catch(err => console.error(err));
 
 // Joke API function
 // https://v2.jokeapi.dev/
-
-
-
 async function fetchJoke (criteria, parts) {
 	var fetchedObj = {};
 
@@ -258,15 +216,40 @@ async function fetchJoke (criteria, parts) {
 
     return fetchedObj;
 }
+// Random Activity Generator
+// example pull https://rapidapi.com/dannyboy96s/api/random-activity-generator/
+// Activity();
+// function Activity() {
+//     const optionsActivityApi = {
+//         method: 'GET',
+//         headers: {
+//             'X-RapidAPI-Host': 'random-activity-generator.p.rapidapi.com',
+//             'X-RapidAPI-Key': 'fbd5c241ffmsh7b20ec77aee88dfp1bd3f2jsncc309ee32ffd'
+//         }
+//     };
+    
+//     fetch('https://random-activity-generator.p.rapidapi.com/v1/random-activity', optionsActivityApi)
+//         .then(response => response.json())
+//         .then(response => console.log(response))
+//         .catch(err => console.error(err));
+// }
 
 
-// progress bar
-function updateProgressBar(progressBar, value) {
-	progressBar.querySelector(".progress-fill").style.width = `${value}%`;
-	progressBar.querySelector(".progress-text").textContent = `${value}%`;
-}
-  
-  const myProgressBar = document.querySelector(".progress");
-  // test, need to pass love value to replace 55
-  updateProgressBar(myProgressBar, 55);
-  
+// example pull https://www.boredapi.com/api/activity
+// const dateAPI = {
+// 	method: 'GET',
+// 	headers: {
+// 		'X-RapidAPI-Host': 'https://www.boredapi.com/api/activity',
+// 		'X-RapidAPI-Key': ''
+// 	}
+// };
+
+// fetch('https://www.boredapi.com/api/activity')
+// 	.then(response => response.json())
+// 	.then(response => console.log(response))
+// 	.then(function (response){
+// 		dateAPIObject = response;
+// 		console.log(dateAPIObject);
+// 	})
+// 	.catch(err => console.error(err));
+
