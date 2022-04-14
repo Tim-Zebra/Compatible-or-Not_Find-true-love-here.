@@ -78,8 +78,6 @@ function capitalizeFirstLetter (word) {
 // Gets joke criteria, gets joke fetch, displays joke
 async function getJoke () {
 	var jokeSectionJokeEl = $('#jokeSectionJoke');
-    // Removes any jokes already inplace.
-    jokeSectionJokeEl.empty();
 	var searchCriteria = '';
 
     // gets joke parameters
@@ -106,8 +104,13 @@ async function getJoke () {
     var onePartJoke = await fetchJoke (searchCriteria, '&type=single');
     var twoPartJoke = await fetchJoke (searchCriteria, '&type=twopart');
 
-    console.log(onePartJoke);
-    console.log(twoPartJoke);
+    // Removes any jokes already inplace. Positioned here to make replace appear 'seamless'
+    jokeSectionJokeEl.empty();
+    
+    // Catches joke if undefined
+    if (onePartJoke.joke === undefined) {
+        onePartJoke.joke = "No options for a witty one-linear. Try a different search criteria."
+    }
 
     // Sets Joke Variables
     onePartJoke = onePartJoke.joke;
@@ -120,6 +123,11 @@ async function getJoke () {
 
 function displayJoke(onePart, twoPartSet, twoPartDel) {
     var jokeSectionJokeEl = $('#jokeSectionJoke');
+    
+    // Creates intro to joke
+    var introJoke = $('<p>It\s dangerous to go unprepared. Take one of these.</p>')
+    jokeSectionJokeEl.append(introJoke);
+
     // Creates first Joke Section
     var divOne = $('<div></div>');
     var headOne = $('<h3>Witty Joke: </h3>');
