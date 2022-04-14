@@ -260,18 +260,13 @@ async function fetchActivity () {
 
 // save to local storage
 function saveToLocalStorage(obj) {
-
     if (searchHistoryArray[0] === null) {
         searchHistoryArray[0] = obj;
     } else {
         searchHistoryArray.unshift(obj);
     }
 
-
-    
-    console.log(searchHistoryArray);
     localStorage.setItem('Lovers', JSON.stringify(searchHistoryArray));
-    console.log('this happened');
 }
 
 // load from local storage
@@ -286,10 +281,23 @@ function getFromLocalStorage() {
 
 
 getFromLocalStorage();
-
+displayHistory();
 //displays search history in HTML
 function displayHistory() {
-    var storageOBJ = getFromLocalStorage();
+    var storageArr = getFromLocalStorage();
     var list = $('#listHistory');
+    
+    for (var i = 0; i < storageArr.length; i++) {
+        // gets value from object array
+        var name1 = storageArr[i].name1;
+        var name2 = storageArr[i].name2;
+        var compat = storageArr[i].score;
+        console.log(name1);
+        console.log(name2);
+        console.log(compat);
+        // adds values to HTML
+        var addTo = $('<li>name1: ' + name1 + ' name2 ' + name2 + ' compat ' + compat + '</li>');
+        list.append(addTo);
+    }
 
 }
