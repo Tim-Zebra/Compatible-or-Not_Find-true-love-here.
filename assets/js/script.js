@@ -175,12 +175,27 @@ function updateProgressBar(progressBar, value) {
 
 // Interprets compatibility
 // test variables
-var score = 50;
-interpretCompatibilityScore();
+interpretCompatibilityScore(100);
 function interpretCompatibilityScore(score) {
+    // Links with HTML
     var compatEl = $('#compat-interp');
-    var textEl = compatEl.text();
+    var text = '';
 
+    // Interprets score
+    console.log(score);
+    if (score <= 33) {
+        text = 'Not even a good joke can save you now. Search for another name. If you disagree, maybe try a middle name?'
+        console.log('this happened');
+    } else if (score <= 66) {
+        text = 'This might be a match! Be sure to checkout our joke and activity section if you want things to go well.'
+    } else if (score <= 85) {
+        text = 'This is a good match! You\'ll defintitely want to have a good joke prepared or have a fun activity planned.'
+    } else {
+        text = 'This match has superb potential! Just don\'t mess it up. Always take a back up like a good joke or an alternative activity (see sections below).'
+    }
+
+    // Sets result on HTML
+    compatEl.text(text);
 }
 
 // Listens for the form submit button to be clicked
