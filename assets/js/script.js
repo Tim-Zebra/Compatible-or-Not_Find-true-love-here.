@@ -296,7 +296,9 @@ function displayHistory() {
         console.log(name2);
         console.log(compat);
         // adds values to HTML
-        var addTo = $('<li>name1: ' + name1 + ' name2 ' + name2 + ' compat ' + compat + '</li>');
+        var addTo = $('<li>' + name1 + ' and ' + name2 + '</li>');
+        var addCompat = $('<p>' + compat + '</p>');
+        addTo.append(addCompat);
         list.append(addTo);
     }
 
