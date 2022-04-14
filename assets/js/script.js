@@ -1,6 +1,7 @@
 // Global variables for API pull
 var loveAPIObject = {};
 var dateAPIObject = {};
+var searchHistoryArray = [];
 
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Form Submission//////////////////////////////////////
 // Sets variable for Form Submissions
@@ -259,14 +260,36 @@ async function fetchActivity () {
 
 // save to local storage
 function saveToLocalStorage(obj) {
-    localStorage.setItem('Lovers', JSON.stringify(obj));
+
+    if (searchHistoryArray[0] === null) {
+        searchHistoryArray[0] = obj;
+    } else {
+        searchHistoryArray.unshift(obj);
+    }
+
+
+    
+    console.log(searchHistoryArray);
+    localStorage.setItem('Lovers', JSON.stringify(searchHistoryArray));
+    console.log('this happened');
 }
 
 // load from local storage
 function getFromLocalStorage() {
    var getFromStorage = JSON.parse(localStorage.getItem('Lovers'));
-    // var lastGrade = JSON.parse(localStorage.getItem("studentGrade"));
-console.log(getFromStorage);
+   if (getFromStorage !== null) {
+    console.log(getFromStorage);
+    searchHistoryArray = getFromStorage;
+    return getFromStorage;
+    }
 }
+
+
 getFromLocalStorage();
 
+//displays search history in HTML
+function displayHistory() {
+    var storageOBJ = getFromLocalStorage();
+    var list = $('#listHistory');
+
+}
