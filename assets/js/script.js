@@ -28,8 +28,6 @@ function getNamesInput (event) {
 		firstName = capitalizeFirstLetter(firstName);
 		secondName = capitalizeFirstLetter(secondName);
     }
-    firstNameEl.val('');
-    secondNameEl.val('');
 
     obj.name1 = firstName;
     obj.name2 = secondName;
@@ -78,8 +76,6 @@ function capitalizeFirstLetter (word) {
 // Gets joke criteria, gets joke fetch, displays joke
 async function getJoke () {
 	var jokeSectionJokeEl = $('#jokeSectionJoke');
-    // Removes any jokes already inplace.
-    jokeSectionJokeEl.empty();
 	var searchCriteria = '';
 
     // gets joke parameters
@@ -98,7 +94,7 @@ async function getJoke () {
 
     // Prevents error if someone doesn't check any boxes
     if (searchCriteria === '') {
-        searchCriteria = 'any';
+        searchCriteria = 'programming,spooky,christmas';
     }
 
     // Creates option to display one and two part jokes
@@ -106,8 +102,13 @@ async function getJoke () {
     var onePartJoke = await fetchJoke (searchCriteria, '&type=single');
     var twoPartJoke = await fetchJoke (searchCriteria, '&type=twopart');
 
-    console.log(onePartJoke);
-    console.log(twoPartJoke);
+    // Removes any jokes already inplace. Positioned here to make replace appear 'seamless'
+    jokeSectionJokeEl.empty();
+    
+    // Catches joke if undefined
+    if (onePartJoke.joke === undefined) {
+        onePartJoke.joke = "No options for a witty one-linear. Try a different search criteria."
+    }
 
     // Sets Joke Variables
     onePartJoke = onePartJoke.joke;
@@ -120,6 +121,7 @@ async function getJoke () {
 
 function displayJoke(onePart, twoPartSet, twoPartDel) {
     var jokeSectionJokeEl = $('#jokeSectionJoke');
+
     // Creates first Joke Section
     var divOne = $('<div></div>');
     var headOne = $('<h3>Witty Joke: </h3>');
@@ -139,7 +141,6 @@ function displayJoke(onePart, twoPartSet, twoPartDel) {
     divTwo.append(headTwo);
     divTwo.append(paraTwo);
     jokeSectionJokeEl.append(divTwo);
-    console.log(jokeSectionJokeEl);
 }
 
 // Listens for button submit on checkboxes
@@ -159,11 +160,10 @@ async function compatibility (event) {
     event.preventDefault();
     var obj = await createCompatibilityObj(event);
     
-    console.log(obj);
     // Adds progress to HMTL
     const myProgressBar = document.querySelector(".progress");
-    console.log(myProgressBar);
     updateProgressBar(myProgressBar, obj.score);
+    interpretCompatibilityScore(obj.score);
 }
 
 // Updates progress bar
@@ -171,6 +171,28 @@ function updateProgressBar(progressBar, value) {
 	progressBar.querySelector(".progress-fill").style.width = `${value}%`;
 	progressBar.querySelector(".progress-text").textContent = `${value}%`;
 }
+
+// Interprets compatibility
+function interpretCompatibilityScore(score) {
+    // Links with HTML
+    var compatEl = $('#compat-interp');
+    var text = '';
+
+    // Interprets score
+    if (score <= 33) {
+        text = 'Not even a good joke can save you now. Search for another name. If you disagree, maybe try a middle name?'
+    } else if (score <= 66) {
+        text = 'This might be a match! Be sure to checkout our joke and activity section if you want things to go well.'
+    } else if (score <= 85) {
+        text = 'This is a good match! You\'ll defintitely want to have a good joke prepared or have a fun activity planned.'
+    } else {
+        text = 'This match has superb potential! Just don\'t mess it up. Always take a back up like a good joke or an alternative activity (see sections below).'
+    }
+
+    // Sets result on HTML
+    compatEl.text(text);
+}
+
 // Listens for the form submit button to be clicked
 compatibilityFormEl.on('submit', compatibility);
 
@@ -210,7 +232,6 @@ async function fetchLove (name1, name2) {
     .then(response => response.json())
     .then(function (data) {
         loveAPIObject = data;
-        console.log(data);
     })
     .catch(err => console.error(err));
 
@@ -245,7 +266,7 @@ async function fetchJoke (criteria, parts) {
 async function fetchActivity () {
     var obj = {};
     
-    await fetch('https://www.boredapi.com/api/activity?participants=2')
+    await fetch('https://www.boredapi.com/api/activity')
 	.then(response => response.json())
 	.then(function (data){
 		obj = data;
