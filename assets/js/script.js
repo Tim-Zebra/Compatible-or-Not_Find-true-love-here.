@@ -164,6 +164,7 @@ async function compatibility (event) {
     const myProgressBar = document.querySelector(".progress");
     console.log(myProgressBar);
     updateProgressBar(myProgressBar, obj.score);
+    interpretCompatibilityScore(obj.score);
 }
 
 // Updates progress bar
@@ -171,6 +172,17 @@ function updateProgressBar(progressBar, value) {
 	progressBar.querySelector(".progress-fill").style.width = `${value}%`;
 	progressBar.querySelector(".progress-text").textContent = `${value}%`;
 }
+
+// Interprets compatibility
+// test variables
+var score = 50;
+interpretCompatibilityScore();
+function interpretCompatibilityScore(score) {
+    var compatEl = $('#compat-interp');
+    var textEl = compatEl.text();
+
+}
+
 // Listens for the form submit button to be clicked
 compatibilityFormEl.on('submit', compatibility);
 
