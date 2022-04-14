@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en-us">
 
     <head>
@@ -7,8 +8,10 @@
         <title>Love Checker!</title>
         <link rel="icon" type="image/x-icon" href="./assets/images/favicons/faviconLove.png" id="favicon">
 
-        <!-- CSS Frameworks: Foundation-CSS, style.css -->
-        
+        <!-- CSS Frameworks: JQueryUI.css, Foundation-CSS, style.css -->
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+
         <link rel="stylesheet" href="./assets/css/style.css">
           <style>
             .button {
@@ -40,6 +43,7 @@
       <!-- Body of Content -->
       <main>
 
+
        
         <!--Fact Section for Bored Api-->
         <section id="BoredSection">
@@ -59,6 +63,8 @@
           </head>
 
  compatibilityForm
+
+
         <!-- Enter names for compatibility -->
         <section id="compatibilitySection">
           <!-- Compatability form -->
@@ -84,27 +90,65 @@
             <button type="submit" class="submit success button" id="compatibilityFormSearchBtn">Go!</button>
           </form>
 
+          <div class="progress">
+            <div class="progress-fill"></div>
+            <span class="progress-text">0%</span>
+          </div>
+        </section>
 
-        <div class="progress">
-          <div class="progress-fill"></div>
-          <span class="progress-text">0%</span>
-        </div>
+        <!-- Joke - Section -->
         <section>
+        <!-- <section class="widget"> -->
+          <h3>-----------JOKE---------------</h3>
+          <!-- Here are the options for the type of joke -->
+          <h2>Checkbox</h2>
+          <fieldset>
+            <legend>Filter to your stlye of jokes: </legend>
+            <label for="programming">Programming</label>
+            <input type="checkbox" name="programming" id="jokeProgrammingBox">
+            <label for="misc">Misc</label>
+            <input type="checkbox" name="misc" id="jokeMiscBox">
+            <label for="dark">Dark</label>
+            <input type="checkbox" name="dark" id="jokeDarkBox">
+            <label for="pun">Pun</label>
+            <input type="checkbox" name="pun" id="jokePunBox">
+            <label for="spooky">Spooky</label>
+            <input type="checkbox" name="spooky" id="jokeSpookyBox">
+            <label for="christmas">Christmas</label>
+            <input type="checkbox" name="christmas" id="jokeChristmasBox">
+          </fieldset>
+
+          <!-- Submit button for joke -->
+          <button type="click" class="submit button" id="jokeCheckBoxSubmit">Submit Criteria!</button>
+
+          <!-- Here two amazing jokes will be displayed -->
+          <div id="jokeSectionJoke"></div>
+        </section>
+
+
+        <!--Fact Section for Bored Api-->
+        <section>
+          <header>
+            <h1>Are you bored? Here is a random activity generator to help spruce up your love life!</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae at sapiente accusamus ipsum voluptatum? Hic, voluptas ad! Optio, eveniet? Velit, illum rerum? Dignissimos tempora ut molestiae qui, atque maiores aperiam.</p>
+            <button class="button button1">Generate</button>
+          </header>
+        </section>
+
+        <section>
+          <!--Section 2-->
 
         </section>
 
 
-
- main
-
-        </section>
-
         <section>
+
           <!--section3-->
         </section>
 
 
         <section>
+
           <!--section4-->
         </section>
       </main>
