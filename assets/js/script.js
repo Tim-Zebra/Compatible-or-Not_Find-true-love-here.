@@ -153,6 +153,7 @@ async function createCompatibilityObj (event) {
     var obj = getNamesInput(event);
     // ***Need to make a function that fetches the score.
     obj.score = await fetchLove(obj.name1, obj.name2);
+    
     saveToLocalStorage(obj);
     return obj;
 }
@@ -284,10 +285,10 @@ async function fetchActivity () {
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Save, Load Local Storage////////////////////////////
 // save to local storage
 function saveToLocalStorage(obj) {
-    // avoids null from empty search history array
+    // avoids null from empty search history array and avoids pushing undefined object
     if (searchHistoryArray[0] === null) {
         searchHistoryArray[0] = obj;
-    } else {
+    } else if (obj !== undefined) {
         searchHistoryArray.unshift(obj);
     }
 
@@ -299,13 +300,12 @@ function getFromLocalStorage() {
    var getFromStorage = JSON.parse(localStorage.getItem('Lovers'));
    if (getFromStorage !== null) {
         searchHistoryArray = getFromStorage;
-        return getFromStorage;
     }
 }
 
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\Display Search History List///////////////////////////
 //displays search history in HTML
-function displayHistory() {
+async function displayHistory() {
     var list = $('#listHistory');
     // Removes any content in search history
     list.empty();
@@ -344,6 +344,21 @@ function displayHistory() {
 // 	progressBar.querySelector(".progress-text").textContent = `${value}%`;
 // }
 
+// Clears search history list
+function clearSearchHistory () {
+    // Clears all varibales
+    searchHistoryArray = [];
+
+    var listHistory = $('#listHistory');
+    listHistory.empty();
+
+    // Saves to local storage
+    saveToLocalStorage();
+}
+
+// Button to clear search history
+var clearSearchHistoryBtn = $('#clearSearchHistory');
+clearSearchHistoryBtn.on('click', clearSearchHistory);
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\initaites base app/////////////////////////////////
 function init() {
     // loads data from storage
