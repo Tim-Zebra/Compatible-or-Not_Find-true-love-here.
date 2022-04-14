@@ -1,6 +1,7 @@
 // Global variables for API pull
 var loveAPIObject = {};
 var dateAPIObject = {};
+var searchHistoryArray = [];
 
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Form Submission//////////////////////////////////////
 // Sets variable for Form Submissions
@@ -152,6 +153,7 @@ async function createCompatibilityObj (event) {
     var obj = getNamesInput(event);
     // ***Need to make a function that fetches the score.
     obj.score = await fetchLove(obj.name1, obj.name2);
+    saveToLocalStorage(obj);
     return obj;
 }
 
@@ -276,8 +278,54 @@ async function fetchActivity () {
     return obj.activity;
 }
 
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Save, Load Local Storage////////////////////////////
+// save to local storage
+function saveToLocalStorage(obj) {
+    // avoids null from empty search history array
+    if (searchHistoryArray[0] === null) {
+        searchHistoryArray[0] = obj;
+    } else {
+        searchHistoryArray.unshift(obj);
+    }
 
+    localStorage.setItem('Lovers', JSON.stringify(searchHistoryArray));
+}
 
+// load from local storage
+function getFromLocalStorage() {
+   var getFromStorage = JSON.parse(localStorage.getItem('Lovers'));
+   if (getFromStorage !== null) {
+        searchHistoryArray = getFromStorage;
+        return getFromStorage;
+    }
+}
 
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\Display Search History List///////////////////////////
+//displays search history in HTML
+function displayHistory() {
+    var storageArr = getFromLocalStorage();
+    var list = $('#listHistory');
+    
+    for (var i = 0; i < storageArr.length; i++) {
+        // gets value from object array
+        var name1 = storageArr[i].name1;
+        var name2 = storageArr[i].name2;
+        var compat = storageArr[i].score;
+        
+        // adds values to HTML
+        var addTo = $('<li>' + name1 + ' and ' + name2 + '</li>');
+        var addCompat = $('<p>' + compat + '</p>');
+        addTo.append(addCompat);
+        list.append(addTo);
+    }
+}
 
-
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\initaites base app/////////////////////////////////
+function init() {
+    // loads data from storage
+    getFromLocalStorage();
+    
+    // Display search history
+    displayHistory();
+}
+init();
