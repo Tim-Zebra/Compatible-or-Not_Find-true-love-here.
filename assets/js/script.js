@@ -94,7 +94,7 @@ async function getJoke () {
 
     // Prevents error if someone doesn't check any boxes
     if (searchCriteria === '') {
-        searchCriteria = 'any';
+        searchCriteria = 'programming,spooky,christmas';
     }
 
     // Creates option to display one and two part jokes
@@ -121,10 +121,6 @@ async function getJoke () {
 
 function displayJoke(onePart, twoPartSet, twoPartDel) {
     var jokeSectionJokeEl = $('#jokeSectionJoke');
-    
-    // Creates intro to joke
-    var introJoke = $('<p>It\s dangerous to go unprepared. Take one of these.</p>')
-    jokeSectionJokeEl.append(introJoke);
 
     // Creates first Joke Section
     var divOne = $('<div></div>');
@@ -145,7 +141,6 @@ function displayJoke(onePart, twoPartSet, twoPartDel) {
     divTwo.append(headTwo);
     divTwo.append(paraTwo);
     jokeSectionJokeEl.append(divTwo);
-    console.log(jokeSectionJokeEl);
 }
 
 // Listens for button submit on checkboxes
@@ -165,10 +160,8 @@ async function compatibility (event) {
     event.preventDefault();
     var obj = await createCompatibilityObj(event);
     
-    console.log(obj);
     // Adds progress to HMTL
     const myProgressBar = document.querySelector(".progress");
-    console.log(myProgressBar);
     updateProgressBar(myProgressBar, obj.score);
     interpretCompatibilityScore(obj.score);
 }
@@ -188,10 +181,8 @@ function interpretCompatibilityScore(score) {
     var text = '';
 
     // Interprets score
-    console.log(score);
     if (score <= 33) {
         text = 'Not even a good joke can save you now. Search for another name. If you disagree, maybe try a middle name?'
-        console.log('this happened');
     } else if (score <= 66) {
         text = 'This might be a match! Be sure to checkout our joke and activity section if you want things to go well.'
     } else if (score <= 85) {
@@ -243,7 +234,6 @@ async function fetchLove (name1, name2) {
     .then(response => response.json())
     .then(function (data) {
         loveAPIObject = data;
-        console.log(data);
     })
     .catch(err => console.error(err));
 
