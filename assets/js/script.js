@@ -151,6 +151,7 @@ async function createCompatibilityObj (event) {
     var obj = getNamesInput(event);
     // ***Need to make a function that fetches the score.
     obj.score = await fetchLove(obj.name1, obj.name2);
+    saveToLocalStorage(obj);
     return obj;
 }
 
@@ -256,7 +257,16 @@ async function fetchActivity () {
 }
 
 
+// save to local storage
 
+var first = document.getElementById('#firstName')
+var second = document.getElementById('#secondName')
+var button = document.querySelector('.submit')
 
+ function saveToLocalStorage(obj) {
+    localStorage.setItem('Lovers', JSON.stringify(obj))
+    
+}
 
+button.addEventListener('click', saveToLocalStorage)
 
