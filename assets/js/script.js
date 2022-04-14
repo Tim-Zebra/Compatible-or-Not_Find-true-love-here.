@@ -280,7 +280,7 @@ async function fetchJoke (criteria, parts) {
 async function fetchActivity () {
     var obj = {};
     
-    await fetch('https://www.boredapi.com/api/activity?participants=2')
+    await fetch('https://www.boredapi.com/api/activity')
 	.then(response => response.json())
 	.then(function (data){
 		obj = data;
