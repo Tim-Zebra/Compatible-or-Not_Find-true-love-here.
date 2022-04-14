@@ -258,15 +258,15 @@ async function fetchActivity () {
 
 
 // save to local storage
-
-var first = document.getElementById('#firstName')
-var second = document.getElementById('#secondName')
-var button = document.querySelector('.submit')
-
- function saveToLocalStorage(obj) {
-    localStorage.setItem('Lovers', JSON.stringify(obj))
-    
+function saveToLocalStorage(obj) {
+    localStorage.setItem('Lovers', JSON.stringify(obj));
 }
 
-button.addEventListener('click', saveToLocalStorage)
+// load from local storage
+function getFromLocalStorage() {
+   var getFromStorage = JSON.parse(localStorage.getItem('Lovers'));
+    // var lastGrade = JSON.parse(localStorage.getItem("studentGrade"));
+console.log(getFromStorage);
+}
+getFromLocalStorage();
 
