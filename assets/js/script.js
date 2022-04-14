@@ -257,9 +257,10 @@ async function fetchActivity () {
     return obj.activity;
 }
 
-
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Save, Load Local Storage////////////////////////////
 // save to local storage
 function saveToLocalStorage(obj) {
+    // avoids null from empty search history array
     if (searchHistoryArray[0] === null) {
         searchHistoryArray[0] = obj;
     } else {
@@ -273,15 +274,12 @@ function saveToLocalStorage(obj) {
 function getFromLocalStorage() {
    var getFromStorage = JSON.parse(localStorage.getItem('Lovers'));
    if (getFromStorage !== null) {
-    console.log(getFromStorage);
-    searchHistoryArray = getFromStorage;
-    return getFromStorage;
+        searchHistoryArray = getFromStorage;
+        return getFromStorage;
     }
 }
 
-
-getFromLocalStorage();
-displayHistory();
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\Display Search History List///////////////////////////
 //displays search history in HTML
 function displayHistory() {
     var storageArr = getFromLocalStorage();
@@ -292,14 +290,21 @@ function displayHistory() {
         var name1 = storageArr[i].name1;
         var name2 = storageArr[i].name2;
         var compat = storageArr[i].score;
-        console.log(name1);
-        console.log(name2);
-        console.log(compat);
+        
         // adds values to HTML
         var addTo = $('<li>' + name1 + ' and ' + name2 + '</li>');
         var addCompat = $('<p>' + compat + '</p>');
         addTo.append(addCompat);
         list.append(addTo);
     }
-
 }
+
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\initaites base app/////////////////////////////////
+function init() {
+    // loads data from storage
+    getFromLocalStorage();
+    
+    // Display search history
+    displayHistory();
+}
+init();
