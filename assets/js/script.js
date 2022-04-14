@@ -139,6 +139,7 @@ function displayJoke(onePart, twoPartSet, twoPartDel) {
     divTwo.append(headTwo);
     divTwo.append(paraTwo);
     jokeSectionJokeEl.append(divTwo);
+    console.log(jokeSectionJokeEl);
 }
 
 // Listens for button submit on checkboxes
@@ -170,9 +171,31 @@ function updateProgressBar(progressBar, value) {
 	progressBar.querySelector(".progress-fill").style.width = `${value}%`;
 	progressBar.querySelector(".progress-text").textContent = `${value}%`;
 }
-// Listens for the form submit button to be pressed
+// Listens for the form submit button to be clicked
 compatibilityFormEl.on('submit', compatibility);
 
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ACITIVTY SECTION/////////////////////////////////////
+var activityGeneratorSubmitEl = $('#activityGeneratorSubmit');
+
+// Gets activity from fetch
+async function activity () {
+    var activity = await fetchActivity();
+    displayActivity (activity);
+}
+
+// Displays an activity
+function displayActivity (activity) {
+    var activityGeneratorEl = $('#activityGenerator');
+    var para = $('<p>' + activity + '</p>');
+
+    // Removes any previous activities
+    activityGeneratorEl.empty();
+    // Adds current activity
+    activityGeneratorEl.append(para);
+}
+
+// Listens for the activity submit button to be clicked
+activityGeneratorSubmitEl.on('click', activity);
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\API FETCHING/////////////////////////////////////////
 // // Love Compatability API
 async function fetchLove (name1, name2) {
@@ -217,18 +240,22 @@ async function fetchJoke (criteria, parts) {
     return fetchedObj;
 }
 
-// Pulls up a random Activity
+// Pulls up a random Activity for two people
 // example pull https://www.boredapi.com/api/activity
-function fetchActivity () {
-    fetch('https://www.boredapi.com/api/activity')
+async function fetchActivity () {
+    var obj = {};
+    
+    await fetch('https://www.boredapi.com/api/activity?participants=2')
 	.then(response => response.json())
 	.then(function (data){
-		console.log(data);
+		obj = data;
 	})
 	.catch(err => console.error(err));
+
+    return obj.activity;
 }
 
-fetchActivity();
+
 
 
 
