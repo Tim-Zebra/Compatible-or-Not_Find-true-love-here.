@@ -166,6 +166,9 @@ async function compatibility (event) {
     const myProgressBar = document.querySelector(".progress");
     updateProgressBar(myProgressBar, obj.score);
     interpretCompatibilityScore(obj.score);
+    
+    // displays search history
+    displayHistory();
 }
 
 // Updates progress bar
@@ -303,22 +306,43 @@ function getFromLocalStorage() {
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\Display Search History List///////////////////////////
 //displays search history in HTML
 function displayHistory() {
-    var storageArr = getFromLocalStorage();
     var list = $('#listHistory');
-    
-    for (var i = 0; i < storageArr.length; i++) {
-        // gets value from object array
-        var name1 = storageArr[i].name1;
-        var name2 = storageArr[i].name2;
-        var compat = storageArr[i].score;
-        
-        // adds values to HTML
-        var addTo = $('<li>' + name1 + ' and ' + name2 + '</li>');
-        var addCompat = $('<p>' + compat + '</p>');
-        addTo.append(addCompat);
-        list.append(addTo);
+    // Removes any content in search history
+    list.empty();
+
+    if (searchHistoryArray !== undefined) {
+        for (var i = 0; i < searchHistoryArray.length; i++) {
+            // gets value from object array
+            var name1 = searchHistoryArray[i].name1;
+            var name2 = searchHistoryArray[i].name2;
+            var compat = searchHistoryArray[i].score;
+            
+            // adds values to HTML
+            var addTo = $('<li>' + name1 + ' and ' + name2 + '</li>');
+            var addCompat = $('<p id="searchHistoryProgress' + i + '">' + compat + '</p>');
+            addTo.append(addCompat);
+            list.append(addTo);
+        }
     }
 }
+
+// // Add compatibility status bars to each result
+// function compatStatusBar (score) {
+//     // Adds progress to HMTL
+//     const myProgressBar = document.querySelectorAll(".searchHistoryProgress");
+//     var myProgresBar = $('.searchHistoryProgress');
+//     updateProgressBar(myProgressBar, score);
+//     interpretCompatibilityScore(score);
+// }
+// function compatibility (event) {
+
+// }
+
+// // Updates progress bar
+// function updateProgressBar(progressBar, value) {
+// 	progressBar.querySelector(".progress-fill").style.width = `${value}%`;
+// 	progressBar.querySelector(".progress-text").textContent = `${value}%`;
+// }
 
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\initaites base app/////////////////////////////////
 function init() {
