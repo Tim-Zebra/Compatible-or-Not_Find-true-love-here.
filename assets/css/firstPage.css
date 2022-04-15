@@ -29,18 +29,18 @@ body {
     /* Animation */
     transform: rotate(-45deg) scale(1);
     animation: pulse 2s linear infinite;
-    margin-right: 300px;
+    margin-right: 400px;
 }
   
 .heart1 {
     background: red;
     position: relative;
-    height: 100px;
+    height: 300px;
     width:100px;
     /* Animation */
     transform: rotate(-45deg) scale(1);
     animation: pulse 2s linear infinite;
-    margin-left: 300px;
+    margin-left: 500px;
 }
   
 
@@ -100,13 +100,20 @@ body {
 }
 
 
-
+form {
+    display: block;
+    position: relative;
+    text-align: center;
+    width: 7em;
+    z-index: 1;
+    transform: rotate(45deg) translateX(2.0em) translateY(-1em);
+}
 
 input {
     display: block;
     position: relative;
     text-align: center;
-    width: 5em;
+    width: 7em;
     z-index: 1;
     transform: rotate(45deg) translateX(2.0em) translateY(-1em);
 }
@@ -150,26 +157,53 @@ input {
     width: 100px;
     height: 100px;
     position: relative;
- }
+}
  
- #cross:before, #cross:after {
+#cross:before, #cross:after {
    content: "";
    position: absolute;
    z-index: -1;
    background: #d00;
- }
+}
  
- #cross:before {
+#cross:before {
    left: 50%;
    width: 30%;
    margin-left: -15%;
    height: 100%;
- }
+}
  
- #cross:after {
+#cross:after {
    top: 50%;
    height: 30%;
    margin-top: -15%;
    width: 100%;
- }
+}
  
+
+span {
+    content: "&#61;";
+    color:black;
+    margin-top: 190px;
+    color: #d00;
+    position: relative;
+}
+
+
+.footer {
+    padding: 60px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 400px;
+}
+.input1 {
+    display: block;
+    position: relative;
+    text-align: center;
+    width: 9em;
+    z-index: 1;
+    transform: rotate(-45deg) translateX(2.0em) translateY(-1em);
+}
