@@ -309,6 +309,35 @@ input {
 }
 
 
+.progress {
+  position: relative;
+  width: 210px;
+  height: 30px;
+  background: pink;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 0%;
+  height: 100%;
+  background: red;
+  transition: all 0.2s;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  font: bold 14px "Quicksand", sans-serif;
+  color: #110101;
+}
+
+#btn{
+  background-color: rgb(217, 101, 120);
+}
+
 
 
 
