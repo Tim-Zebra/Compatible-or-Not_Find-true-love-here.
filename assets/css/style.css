@@ -363,6 +363,53 @@ input {
 }
 
 
+#checklist {
+  background-color: #f58dcf;
+  text-align: center;
+  
+}
 
+#pro {
+ 
+  color: #1abc9c;
+  font-weight: bolder;
+  font-size: larger;
+  
+}
+
+#misc {
+ 
+  color: #d00;
+  font-weight: bolder;
+  font-size: larger;
+}
+
+#dark {
+ 
+  color: rgb(195, 67, 67);
+  font-weight: bolder;
+  font-size: larger;
+}
+
+#pun {
+ 
+  color: rgb(223, 135, 135);
+  font-weight: bolder;
+  font-size: larger;
+}
+
+#spo {
+ 
+  color: rgb(216, 90, 168);
+  font-weight: bolder;
+  font-size: larger;
+}
+
+#chr {
+ 
+  color: rgb(147, 75, 126);
+  font-weight: bolder;
+  font-size: larger;
+}
 
 
