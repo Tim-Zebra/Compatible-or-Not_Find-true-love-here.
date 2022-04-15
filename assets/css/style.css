@@ -2,32 +2,39 @@ body {
   background-color: #ffadc7;
 }
 
-#container {
-  min-height: 100vh;
-}
-
 header {
-  font-size: 50px;
-  margin-left: 10%;
-  margin-bottom: 20px;
+  margin: auto;
+  text-align: center;
   font-weight: bolder;
   padding-top: 60px;
 }
 
 header h1 {
+  font-size: 200px;
   margin-left: 50px;
- font-weight: bold;
+  font-weight: bold;
 }
 
-img {
-  width: 1100px;
-  height: 10%;
+#header {
+  max-width: 100%;
+}
+
+#imageDiv {
+  width: 100%;
+  background-image: url(http://s30.postimg.org/x0ne0p5wx/bootsrap.png);
+  height: 405px;
+  /* background-color: purple; */
+  background-position: center;
+}
+
+#headerImage {
   margin-top: 40px;
-  margin-left: 7%;
   border: 3px solid black;
   padding: 0px;
   border-radius: 6px;
 }
+
+
 
 .middle {
   margin-top: -250px;
@@ -278,31 +285,6 @@ input {
 #btn{
   background-color: rgb(217, 101, 120);
 }
-
-#img2 {
-  width: 500px;
-  height: 20%;
-  margin-top: 90px;
-  margin-left: 3%;
-  border: 3px solid black;
-  padding: 0px;
-  border-radius: 6px;
-  
-  margin-bottom: 300px;
-}
-
-#img3 {
-  width: 550px;
-  height: 20%;
-  margin-top: 40px;
-  margin-left: 7%;
-  border: 3px solid black;
-  padding: 0px;
-  border-radius: 6px;
-
-  margin-bottom: 300px;
-}
-
 
 #checklist {
   background-color: #f58dcf;
