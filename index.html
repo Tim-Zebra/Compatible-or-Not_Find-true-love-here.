@@ -24,7 +24,7 @@
       <!-- Slide 1 - Header/Intro -->
       <header class="row align-center" id="header">
         <h1>The straight forward compatibility finder
-          <p class="">Who has time to make a profile?</p>
+          <p>Who has time to make a profile?</p>
         </h1>
         <div>
           <img id="headerImage" src="./assets/Images/4203630.jpg" alt="Good Vibes Intro Image">
@@ -33,93 +33,61 @@
         <div class="secondPinkBackground"></div>
       </header>
 
-    </div>
-
     <!-- Body of Content -->
     <main>
-      <div class="middle"></div>
       <!-- Enter names for compatibility -->
-      <section id="compatibilitySection">
-
+      <section class="row" id="compatibilitySection">
         <!-- Compatability form -->
-        <div id="mainintro">
-          <h2>Are you compatible?</h2>
-          <br>
-           <p>Fill out your names below to find out.</p>
-        </div>
+        <h2>Are you compatible?</h2>
+        <p>Fill out your names below to find out.</p>
         
-        <div class="middle"></div>
-          <div id="name">
-            <h4>Enter your name:</h4>
-          </div>
-          <div id="name1">
-            <h4>Enter the name of your true love:</h4>
-        </div>
-
-        <div class="middle"></div>
         <form id="compatibilityForm">
           <div class="grid-container">
             <div class="grid-x grid-padding-x">
 
-              <!-- First Box -->
-              <div class="heart">
-                <label>
-                  <input type="text" id="firstName" placeholder="Your name...">
-                </label>
+              <!-- First Hearts-->
+              <div class="medium-6 cell">
+                <div class="heart">
+                    <label>Enter your name:
+                      <input type="text" id="firstName" placeholder="Your name...">
+                    </label>
+                </div>
               </div>
 
               <!-- Second Box -->
-              <div class="heart1">
-                <label>
-                  <input type="text" id="secondName" placeholder="Their name...">
-                </label>
+              <div class="medium-6 cell">
+                <div class="heart">
+                  <label>
+                    <input type="text" id="secondName" placeholder="Their name...">
+                  </label>
+                </div>
               </div>
-              
             </div>
           </div>
-           
+        
           <!-- Button to submit the form -->
           <button type="submit" class="submit success button" id="compatibilityFormSearchBtn">Compare!</button>
         </form>
-
       </section>
 
       <!-- Compatibility Section -->
-      <div class="middle"></div>
-      <section class="results">
-        
+      <section>
         <h3>Compatibility Gauge (Hint: A higher number is better)</h3>
-
-        <div class="middle">
         <!-- Compatibility bar -->
         <div class="progress">
           <div class="progress-fill"></div>
           <span class="progress-text">0%</span>
         </div>
-
-        <div class="middle"></div>
         <!-- Compatibility Assessment -->
         <p id="compat-interp"></p>
-      <aside>
-        <div id="searchHeader">
-          <h4>Search History</h4>
-          <button class="button" id="clearSearchHistory">Clear Search</button>
-        </div>
-        <!-- List of locations -->
-        <ul id="listHistory"></ul>
-      </aside>
-
-      <!-- Footer -->
-      <footer>Made with &#128149 for Love.</footer>
-
       </section>
 
       <!-- Joke - Section -->
       <section>
         <!-- Here are the options for the type of joke -->
-        <h2 id="checklist">Who doesn't like a good joke? Find one below:</h2>
+        <h2 class="checklist">Who doesn't like a good joke? Find one below:</h2>
         <fieldset>
-          <legend id="checklist">Filter to your style of jokes: </legend>
+          <legend class="checklist">Filter to your style of jokes: </legend>
           <label id="pro" for="programming">Programming</label>
           <input type="checkbox" name="programming" id="jokeProgrammingBox">
 
@@ -137,7 +105,6 @@
 
           <label id="chr" for="christmas">Christmas</label>
           <input type="checkbox" name="christmas" id="jokeChristmasBox">
-
         </fieldset>
 
         <!-- Submit button for joke -->
@@ -153,33 +120,26 @@
         <button class="button button1" id="activityGeneratorSubmit">Generate</button>
         <div id="activityGenerator"></div>
       </section>
-
-      <div class="bottom"></div>
-
-      <!-- Currency Exchange -->
-      <section>
-
-      </section>
     </main>
  
+    <aside>
+      <div id="searchHeader">
+        <h4>Search History</h4>
+        <button class="button" id="clearSearchHistory">Clear Search</button>
+      </div>
+      <!-- List of locations -->
+      <ul id="listHistory"></ul>
+    </aside>
 
     <!-- Footer -->
     <footer>Made with &#128149 for Love.</footer>
 
-       
-    <script src="./assets/js/what-input.js"></script>
-    <script src="./assets/js/foundation.min.js"></script>
-    
     <!-- Javascripts: JQuery, Foundation-JS, Moment, JQuery UI, JS.script -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="./assets/js/script.js"></script>
-    <!-- Required for Foundation -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
-
-
   </body>
 </html>
 
