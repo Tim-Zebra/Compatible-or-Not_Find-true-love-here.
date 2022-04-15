@@ -172,7 +172,41 @@ input {
   transform: rotate(45deg) translateX(2.0em) translateY(-1em);
 }
 
+.heart {
+  background: red;
+  position: absolute;
+  height: 100px;
+  width:100px;
+  /* Animation */
+  transform: rotate(-45deg) scale(1);
+  animation: pulse 2s linear infinite ;
+  margin-top: -650px;
+  margin-left: -200px;
+  transform: rotate(140deg) scale(0.95);
+  margin-right: 350px;
+}
 
+.heart::after {
+  background: inherit;
+  border-radius: 50%; 
+  content:'';
+  position:absolute;
+  top: -50%; 
+   left:0;
+  height: 100px;
+  width:100px;
+}
+
+.heart::before {
+   background:inherit; 
+  border-radius: 50%; 
+  content:'';
+  position:absolute;
+  top:0; 
+  right:-50%; 
+  height: 100px;
+  width:100px;
+}
 
 
 
