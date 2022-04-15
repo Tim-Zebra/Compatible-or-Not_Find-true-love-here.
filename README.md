@@ -20,6 +20,7 @@ GitHub Repository
 GitHub Projects
 VS Code
 HTML
+CSS
 Formation-CSS
 JavaScript
 JQuery
