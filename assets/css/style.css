@@ -114,6 +114,36 @@ img {
  border: 9px;
 }
 
+#name {
+  background-color: rgb(11, 1, 1);
+  color: beige;
+  width: 30%;
+  height: 80px;
+  margin-left: 10%;
+  color: aliceblue;
+  text-align: center;
+  border-radius: 10px;
+  border: 7px solid black;
+  position: absolute;
+  z-index: 7;
+  margin-top: -40%;
+}
+
+#name1 {
+  background-color: rgb(11, 1, 1);
+  color: beige;
+  width: 30%;
+  height: 80px;
+  margin-left: 60%;
+  color: aliceblue;
+  text-align: center;
+  border-radius: 10px;
+  border: 7px solid black;
+  position: absolute;
+  z-index: 7;
+  margin-top: -40%;
+}
+
 
 
 
