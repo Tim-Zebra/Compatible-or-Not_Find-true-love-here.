@@ -239,7 +239,7 @@ input {
   content:'';
   position:absolute;
   top:0; 
-  right:-50%; /
+  right:-50%; 
   height: 100px;
   width:100px;
 }
@@ -423,4 +423,12 @@ input {
   position: relative;
 }
   
-
+.footer {
+  padding: 60px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+  position: absolute;
+  top: 400px;
+}
