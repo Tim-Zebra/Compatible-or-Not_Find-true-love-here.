@@ -1,6 +1,7 @@
 // Global variables for API pull
 var loveAPIObject = {};
 var dateAPIObject = {};
+var searchHistoryArray = [];
 
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Form Submission//////////////////////////////////////
 // Sets variable for Form Submissions
@@ -152,6 +153,8 @@ async function createCompatibilityObj (event) {
     var obj = getNamesInput(event);
     // ***Need to make a function that fetches the score.
     obj.score = await fetchLove(obj.name1, obj.name2);
+    
+    saveToLocalStorage(obj);
     return obj;
 }
 
@@ -164,6 +167,9 @@ async function compatibility (event) {
     const myProgressBar = document.querySelector(".progress");
     updateProgressBar(myProgressBar, obj.score);
     interpretCompatibilityScore(obj.score);
+    
+    // displays search history
+    displayHistory();
 }
 
 // Updates progress bar
@@ -276,8 +282,97 @@ async function fetchActivity () {
     return obj.activity;
 }
 
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Save, Load Local Storage////////////////////////////
+// save to local storage
+function saveToLocalStorage(obj) {
+    // avoids null from empty search history array and avoids pushing undefined object
+    if (searchHistoryArray[0] === null) {
+        searchHistoryArray[0] = obj;
+    } else if (obj !== undefined) {
+        searchHistoryArray.unshift(obj);
+    }
+
+    localStorage.setItem('Lovers', JSON.stringify(searchHistoryArray));
+}
+
+// load from local storage
+function getFromLocalStorage() {
+   var getFromStorage = JSON.parse(localStorage.getItem('Lovers'));
+   if (getFromStorage !== null) {
+        searchHistoryArray = getFromStorage;
+    }
+}
+
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\Display Search History List///////////////////////////
+//displays search history in HTML
+async function displayHistory() {
+    var list = $('#listHistory');
+    // Removes any content in search history
+    list.empty();
+
+    if (searchHistoryArray !== undefined) {
+        for (var i = 0; i < searchHistoryArray.length; i++) {
+            // gets value from object array
+            var name1 = searchHistoryArray[i].name1;
+            var name2 = searchHistoryArray[i].name2;
+            var compat = searchHistoryArray[i].score;
+            
+            // Creates li value for HTML
+            var addTo = document.createElement('li');
+            addTo.textContent = name1 + ' and ' + name2;
 
 
+            // Creates progress bar for HTML
+            var divProg = document.createElement("div");
+            divProg.setAttribute('class', 'progress');
+            divProg.setAttribute('id', 'progress' + i)
+            
+            var divProgFill = document.createElement("div");
+            divProgFill.setAttribute('class', 'progress-fill');
 
+            var spanProg = document.createElement("span");
+            spanProg.setAttribute('class', 'progress-text');
 
+            divProg.appendChild(divProgFill);
+            divProg.appendChild(spanProg);            
 
+            addTo.append(divProg);
+            list.append(addTo);
+
+            // Applies fill to progress bar
+            var progressBar = document.getElementById('progress' + i);
+            updateProgressBar(progressBar, compat);
+        }
+    }
+}
+
+// Updates progress bar
+function updateProgressBar(progressBar, value) {
+	progressBar.querySelector(".progress-fill").style.width = `${value}%`;
+	progressBar.querySelector(".progress-text").textContent = `${value}%`;
+}
+
+// Clears search history list
+function clearSearchHistory () {
+    // Clears all varibales
+    searchHistoryArray = [];
+
+    var listHistory = $('#listHistory');
+    listHistory.empty();
+
+    // Saves to local storage
+    saveToLocalStorage();
+}
+
+// Button to clear search history
+var clearSearchHistoryBtn = $('#clearSearchHistory');
+clearSearchHistoryBtn.on('click', clearSearchHistory);
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\initaites base app/////////////////////////////////
+function init() {
+    // loads data from storage
+    getFromLocalStorage();
+    
+    // Display search history
+    displayHistory();
+}
+init();
