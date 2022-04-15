@@ -1,4 +1,8 @@
 /* Add code*/
+* {
+  box-sizing: border-box;
+}
+
 .topnav {
     overflow: hidden;
     background-color: #e9e9e9;
@@ -52,39 +56,34 @@
     }
 }
 
-  
 
-
-
-
-.progress {
-    position: relative;
-    width: 210px;
-    height: 30px;
-    background: pink;
-    border-radius: 5px;
-    overflow: hidden;
-  }
-  
-  .progress-fill {
-    width: 0%;
-    height: 100%;
-    background: red;
-    transition: all 0.2s;
-  }
-  
-  .progress-text {
-    position: absolute;
-    top: 50%;
-    right: 5px;
-    transform: translateY(-50%);
-    font: bold 14px "Quicksand", sans-serif;
-    color: #ffffff;
-  }
-  
-  #btn{
-    background-color: pink;
+body {
+  background-color: #ffadc7;
 }
+
+#container {
+  min-height: 100vh;
+}
+
+header {
+  font-size: 50px;
+  margin-left: 10%;
+  margin-bottom: 20px;
+  font-weight: bolder;
+  padding-top: 60px;
+}
+
+header h1 {
+  margin-left: 50px;
+ font-weight: bold;
+}
+
+  
+
+
+
+
+
 
 
 
