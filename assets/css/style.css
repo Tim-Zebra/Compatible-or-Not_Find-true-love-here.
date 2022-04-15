@@ -45,19 +45,8 @@ main {
   display:inline;
 }
 
-#mainintro {
-  background-color: rgb(11, 1, 1);
-  color: aliceblue;
-  text-align: center;
-  border-radius: 10px;
-  border: 7px solid black;
-}
-
-#mainintro h2 {
-  border: 9px;
-}
-
-#name { 
+/* Main body */
+/* #name { 
   background-color: rgb(11, 1, 1);
   color: beige;
   width: 30%;
@@ -85,34 +74,23 @@ main {
   position: absolute;
   z-index: 7;
   margin-top: -40%;
-}
+} */
 
-
-.grid-x grid-padding-x {
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  min-height:100vh;
-  margin: 0;
-  
-}
 
 form {
-  display: block;
   position: relative;
-  text-align: center;
-  width: 7em;
-  z-index: 1;
-  transform: rotate(45deg) translateX(2.0em) translateY(-1em);
+    /* transform: rotate(45deg) translateY(-1em); */
 }
 
-input {
-  display: block;
+.heart input {
   position: relative;
-  text-align: center;
-  width: 7em;
   z-index: 1;
-  transform: rotate(45deg) translateX(2.0em) translateY(-1em);
+  transform: rotate(45deg) translateY(-1em);
+}
+
+.heartOrientation {
+  transform: rotate(45deg) translateY(-1em);
+  margin-top: 100px;
 }
 
 .heart {
@@ -121,11 +99,11 @@ input {
   height: 100px;
   width:100px;
   /* Animation */
-  transform: rotate(-45deg) scale(1);
-  animation: pulse 2s linear infinite ;
-  transform: rotate(140deg) scale(0.95);
+  animation: pulse 2s linear infinite;
+  margin-left: 1;
 }
 
+/* Left side of heart */
 .heart::after {
   background: inherit;
   border-radius: 50%; 
@@ -134,9 +112,11 @@ input {
   top: -50%; 
   left:0;
   height: 100px;
-  width:100px;
+  width: 100px;
+
 }
 
+/* Right side of heart */
 .heart::before {
   background:inherit; 
   border-radius: 50%; 
@@ -193,18 +173,13 @@ input {
   background-color: #080e09; 
   border: none;
   color: white;
-  padding: 15px 42px;
   text-align: center;
   font-size: 16px;
   border-radius: 5px;
   position: relative;
   width: 400px;
   height: 80px;
-  margin-left: 120%;
   border: 7px solid black;
-  z-index: 7;
-  margin-top: -150px;
-  transform: rotate(-45deg) scale(0.95);
 }
 
 /* Progress bar section */
