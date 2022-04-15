@@ -117,16 +117,13 @@ input {
 
 .heart {
   background: red;
-  position: absolute;
+  position: relative;
   height: 100px;
   width:100px;
   /* Animation */
   transform: rotate(-45deg) scale(1);
   animation: pulse 2s linear infinite ;
-  margin-top: -650px;
-  margin-left: -200px;
   transform: rotate(140deg) scale(0.95);
-  margin-right: 350px;
 }
 
 .heart::after {
@@ -135,13 +132,13 @@ input {
   content:'';
   position:absolute;
   top: -50%; 
-   left:0;
+  left:0;
   height: 100px;
   width:100px;
 }
 
 .heart::before {
-   background:inherit; 
+  background:inherit; 
   border-radius: 50%; 
   content:'';
   position:absolute;
@@ -151,11 +148,14 @@ input {
   width:100px;
 }
 
+/* Heart Beat Animation */
 @keyframes pulse{
   0% {
       transform: rotate(-450deg) scale(1);
       opacity: 0;
-  }/*
+  }
+  
+  /*
   10% {
       transform: rotate(-45deg) scale(1.3);
   }
@@ -172,7 +172,9 @@ input {
   50% {
       transform: rotate(-450deg) scale(1.3);
       opacity: 1;
-  }/*
+  }
+  
+  /*
   60% {
       transform: rotate(-45deg) scale(0.95);
   }
@@ -196,8 +198,6 @@ input {
   font-size: 16px;
   border-radius: 5px;
   position: relative;
-  top: -509px;
-  left: -100px;
   width: 400px;
   height: 80px;
   margin-left: 120%;
@@ -207,14 +207,7 @@ input {
   transform: rotate(-45deg) scale(0.95);
 }
 
-.results {
-  margin-top: -400px;
-  margin-left: 20px;
-  
-
-}
-
-
+/* Progress bar section */
 .progress {
   position: relative;
   width: 210px;
@@ -232,15 +225,12 @@ input {
 }
 
 .progress-text {
+  position: absolute;
   top: 50%;
   right: 5px;
   transform: translateY(-50%);
   font: bold 14px "Quicksand", sans-serif;
   color: #110101;
-}
-
-#btn{
-  background-color: rgb(217, 101, 120);
 }
 
 .checklist {
