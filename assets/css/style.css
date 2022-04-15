@@ -338,6 +338,29 @@ input {
   background-color: rgb(217, 101, 120);
 }
 
+#img2 {
+  width: 500px;
+  height: 20%;
+  margin-top: 90px;
+  margin-left: 3%;
+  border: 3px solid black;
+  padding: 0px;
+  border-radius: 6px;
+  
+  margin-bottom: 300px;
+}
+
+#img3 {
+  width: 550px;
+  height: 20%;
+  margin-top: 40px;
+  margin-left: 7%;
+  border: 3px solid black;
+  padding: 0px;
+  border-radius: 6px;
+
+  margin-bottom: 300px;
+}
 
 
 
