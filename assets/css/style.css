@@ -145,6 +145,32 @@ img {
 }
 
 
+.grid-x grid-padding-x {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  min-height:100vh;
+  margin: 0;
+  
+}
+
+form {
+  display: block;
+  position: relative;
+  text-align: center;
+  width: 7em;
+  z-index: 1;
+  transform: rotate(45deg) translateX(2.0em) translateY(-1em);
+}
+
+input {
+  display: block;
+  position: relative;
+  text-align: center;
+  width: 7em;
+  z-index: 1;
+  transform: rotate(45deg) translateX(2.0em) translateY(-1em);
+}
 
 
 
