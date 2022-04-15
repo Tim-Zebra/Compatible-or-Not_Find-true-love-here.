@@ -123,6 +123,39 @@
 
   </div>
 
+  <!-- Joke - Section -->
+  <section>
+    <!-- Here are the options for the type of joke -->
+    <h2 id="checklist">Who doesn't like a good joke? Find one below:</h2>
+    <fieldset>
+        <legend id="checklist">Filter to your style of jokes: </legend>
+        <label id="pro" for="programming">Programming</label>
+        <input type="checkbox" name="programming" id="jokeProgrammingBox">
+
+        <label id="misc" for="misc">Misc</label>
+        <input type="checkbox" name="misc" id="jokeMiscBox">
+
+        <label id="dark" for="dark">Dark</label>
+        <input type="checkbox" name="dark" id="jokeDarkBox">
+
+        <label id="pun" for="pun">Pun</label>
+        <input type="checkbox" name="pun" id="jokePunBox">
+
+        <label id="spo" for="spooky">Spooky</label>
+        <input type="checkbox" name="spooky" id="jokeSpookyBox">
+
+        <label id="chr" for="christmas">Christmas</label>
+        <input type="checkbox" name="christmas" id="jokeChristmasBox">
+
+    </fieldset>
+
+    <!-- Submit button for joke -->
+    <button type="click" class="submit button" id="jokeCheckBoxSubmit">Submit Criteria!</button>
+
+    <!-- Here two amazing jokes will be displayed -->
+    <div id="jokeSectionJoke"></div>
+</section>
+
     <!-- Javascripts: JQuery, Foundation-JS, Moment, JQuery UI, JS.script -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
