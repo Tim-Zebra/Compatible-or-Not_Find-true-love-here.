@@ -82,25 +82,23 @@ form {
     /* transform: rotate(45deg) translateY(-1em); */
 }
 
-.heart input {
-  position: relative;
-  z-index: 1;
-  transform: rotate(45deg) translateY(-1em);
-}
-
 .heartOrientation {
   transform: rotate(45deg) translateY(-1em);
-  margin-top: 100px;
+  margin-left: 20%
 }
 
+/* Heart Stem - Point */
 .heart {
   background: red;
   position: relative;
-  height: 100px;
-  width:100px;
+  height: 150px;
+  width:150px;
   /* Animation */
   animation: pulse 2s linear infinite;
-  margin-left: 1;
+  margin-top: 30%;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 20%;
 }
 
 /* Left side of heart */
@@ -111,9 +109,8 @@ form {
   position:absolute;
   top: -50%; 
   left:0;
-  height: 100px;
-  width: 100px;
-
+  height: 150px;
+  width: 150px;
 }
 
 /* Right side of heart */
@@ -124,9 +121,20 @@ form {
   position:absolute;
   top:0; 
   right:-50%; 
-  height: 100px;
-  width:100px;
+  height: 150px;
+  width:150px;
 }
+
+/* Adjusts text box inside of heart */
+.heart input {
+  position: relative;
+  z-index: 1;
+  transform: rotate(45deg) translateY(1.5em);
+  width: 220px;
+  margin-left: 20px;
+  margin-top: 100px;
+}
+
 
 /* Heart Beat Animation */
 @keyframes pulse{
@@ -180,6 +188,7 @@ form {
   width: 400px;
   height: 80px;
   border: 7px solid black;
+  margin-top:10%;
 }
 
 /* Progress bar section */
@@ -274,4 +283,17 @@ form {
   color: white;
   font-size: 30px;
   top: 400px;
+}
+
+/* Adjust for media size */
+@media screen and (max-width: 641px) {
+  /* Heart Stem - Point */
+  .heart {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .heartOrientation {
+    transform: rotate(45deg) translateY(-1em);
+    margin-left: auto;
+  }
 }
