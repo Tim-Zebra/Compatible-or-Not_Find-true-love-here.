@@ -19,22 +19,15 @@ header h1 {
   max-width: 100%;
 }
 
-#imageDiv {
-  width: 100%;
-  background-image: url(http://s30.postimg.org/x0ne0p5wx/bootsrap.png);
-  height: 405px;
-  /* background-color: purple; */
-  background-position: center;
-}
-
 #headerImage {
   margin-top: 40px;
+  width: 90%;
+  height: 50vh;
   border: 3px solid black;
   padding: 0px;
   border-radius: 6px;
+  object-fit:cover;
 }
-
-
 
 .middle {
   margin-top: -250px;
