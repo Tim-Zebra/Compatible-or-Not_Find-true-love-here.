@@ -208,6 +208,42 @@ input {
   width:100px;
 }
 
+.heart1 {
+  background: red;
+  position: absolute;
+  height: 100px;
+  width:100px;
+  /* Animation */
+  transform: rotate(45deg) scale(1);
+  animation: pulse 2s linear infinite;
+  margin-left: 250px;
+  margin-top: -1100px;
+  transform: rotate(95deg) scale(0.95);
+  margin-right: -100%;
+}
+
+.heart1::after {
+  background:inherit;
+  border-radius: 50%; 
+  content:'';
+  position:absolute;
+   top: -50%; 
+  left:0;
+  height: 100px;
+  width:100px;
+}
+
+.heart1::before {
+   background:inherit; 
+  border-radius: 50%; 
+  content:'';
+  position:absolute;
+  top:0; 
+  right:-50%; /
+  height: 100px;
+  width:100px;
+}
+
 
 
 
