@@ -1,0 +1,202 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Tab title + favicon -->
+        <title>Love Checker</title>
+        <link rel="icon" type="image/x-icon" href="./assets/images/favicons/faviconLove.png" id="favicon">
+
+        <!-- CSS Frameworks: JQueryUI.css, Foundation-CSS, style.css -->
+        <script src="./assets/js/jquery.js"></script>
+        <link rel="stylesheet" href="./assets/css/foundation.css" />
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="./assets/css/fifthpage.css" />
+    </head>
+
+
+    <body>
+
+        <div id="container">
+            <!-- Slide 1 - Header/Intro -->
+            <header class="header">
+                <h1>Love</h1>
+                <p>Can you find it <br> before it finds you?</p>
+            </header>
+
+            <div id="img1">
+                <img src="./assets/Images/4203630.jpg" alt="first pic">
+            </div>
+            
+            <div class="middle"></div>
+            
+        </div>
+
+
+        <!-- Body of Content -->
+        <main>
+            <div class="middle"></div>
+            <!-- Enter names for compatibility -->
+            <section id="compatibilitySection">
+
+                <!-- Compatability form -->
+                <div id="mainintro">
+                   <h2>Are you compatible?</h2>
+                  <br>
+                  <p>Fill out your names below to find out.</p>
+                </div>
+            
+                <div class="middle"></div>
+                <div id="name">
+                    <h4>Enter your name:</h4>
+                </div>
+                
+                <div id="name1">
+                    <h4>Enter the name of your true love:</h4>
+                </div>
+
+                <div class="middle"></div>
+                <form id="compatibilityForm">
+                    <div class="grid-container">
+                      <div class="grid-x grid-padding-x">
+
+                        <!-- First Box -->
+                        <div class="heart">
+                          <label>
+                            <input type="text" id="firstName" placeholder="Your name...">
+                          </label>
+                        </div>
+
+                        <!-- Second Box -->
+                        <div class="heart1">
+                          <label>
+                            <input type="text" id="secondName" placeholder="Their name...">
+                          </label>
+                        </div>
+                      
+                    </div>
+                   
+                    <!-- Button to submit the form -->
+                    <button type="submit" class="submit success button" id="compatibilityFormSearchBtn">Compare!</button>
+                </form>
+    
+            </section>
+
+            <!-- Compatibility Section -->
+            <div class="middle"></div>
+            <section class="results">
+                
+                <h3>Compatibility Gauge (Hint: A higher number is better)</h3>
+
+                <div class="middle">
+                <!-- Compatibility bar -->
+                <div class="progress">
+                  <div class="progress-fill"></div>
+                  <span class="progress-text">0%</span>
+                </div>
+
+                <div class="middle"></div>
+                <!-- Compatibility Assessment -->
+                <p id="compat-interp"></p>
+
+            </section>
+
+
+            <div class="grid-x grid-padding-x align-bottom">
+
+                <div id="img2">
+                
+                    <img src="./assets/Images/158521.jpg" alt="second pic">
+                </div>
+                
+                <div id="img3">
+                
+                    <img src="./assets/Images/454404.jpg" alt="third pic">
+                </div>
+
+                <div id="img3">
+                
+                    <img src="./assets/Images/2075235.jpg" alt="third pic">
+                </div>
+
+            </div>
+                
+            
+            <!-- Joke - Section -->
+            <section>
+                <!-- Here are the options for the type of joke -->
+                <h2 id="checklist">Who doesn't like a good joke? Find one below:</h2>
+                <fieldset>
+                    <legend id="checklist">Filter to your style of jokes: </legend>
+                    <label id="pro" for="programming">Programming</label>
+                    <input type="checkbox" name="programming" id="jokeProgrammingBox">
+
+                    <label id="misc" for="misc">Misc</label>
+                    <input type="checkbox" name="misc" id="jokeMiscBox">
+
+                    <label id="dark" for="dark">Dark</label>
+                    <input type="checkbox" name="dark" id="jokeDarkBox">
+
+                    <label id="pun" for="pun">Pun</label>
+                    <input type="checkbox" name="pun" id="jokePunBox">
+
+                    <label id="spo" for="spooky">Spooky</label>
+                    <input type="checkbox" name="spooky" id="jokeSpookyBox">
+
+                    <label id="chr" for="christmas">Christmas</label>
+                    <input type="checkbox" name="christmas" id="jokeChristmasBox">
+
+                </fieldset>
+  
+                <!-- Submit button for joke -->
+                <button type="click" class="submit button" id="jokeCheckBoxSubmit">Submit Criteria!</button>
+  
+                <!-- Here two amazing jokes will be displayed -->
+                <div id="jokeSectionJoke"></div>
+            </section>
+            
+
+            <!-- Random Acitivity Generator-->
+            <section>
+                <h2>Find a fun activity!</h2>
+                <button class="button button1" id="activityGeneratorSubmit">Generate</button>
+                <div id="activityGenerator"></div>
+            </section>
+
+            <div class="bottom"></div>
+
+            <!-- Currency Exchange -->
+            <section>
+
+            </section>
+        </main>
+
+
+        <!-- Footer -->
+        <footer>Made with &#128149 for Love.</footer>
+
+       
+        <script src="./assets/js/what-input.js"></script>
+        <script src="./assets/js/foundation.min.js"></script>
+        <script>
+        $(document).foundation();
+        </script>
+        <!-- Javascripts: JQuery, Foundation-JS, Moment, JQuery UI, JS.script -->
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+       
+        <script src="./assets/js/script.js"></script>
+
+    </body>
+
+
+</html>
+
+
+
