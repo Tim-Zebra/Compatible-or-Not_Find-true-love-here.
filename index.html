@@ -87,34 +87,38 @@
         <h2 id="jokeHeader">Who doesn't like a good joke? Find one below:</h2>
         <fieldset id="jokeFieldset">
           <legend id="jokeLegend">Filter to your style of jokes: </legend>
-          <div>
-            <label id="pro" for="programming">Programming</label>
-            <input type="checkbox" name="programming" id="jokeProgrammingBox">
+          <div id="checkBoxes">
+            <div>
+              <label id="pro" for="programming">Programming</label>
+              <input type="checkbox" name="programming" id="jokeProgrammingBox">
+            </div>
+            <div>
+              <label id="misc" for="misc">Misc</label>
+              <input type="checkbox" name="misc" id="jokeMiscBox">
+            </div>
+            <div>
+              <label id="dark" for="dark">Dark</label>
+              <input type="checkbox" name="dark" id="jokeDarkBox">
+            </div>
+            <div>
+              <label id="pun" for="pun">Pun</label>
+              <input type="checkbox" name="pun" id="jokePunBox">
+            </div>
+            <div>
+              <label id="spo" for="spooky">Spooky</label>
+              <input type="checkbox" name="spooky" id="jokeSpookyBox">
+            </div>
+            <div>
+              <label id="chr" for="christmas">Christmas</label>
+              <input type="checkbox" name="christmas" id="jokeChristmasBox">
+            </div>
           </div>
-          <div>
-            <label id="misc" for="misc">Misc</label>
-            <input type="checkbox" name="misc" id="jokeMiscBox">
-          </div>
-          <div>
-            <label id="dark" for="dark">Dark</label>
-            <input type="checkbox" name="dark" id="jokeDarkBox">
-          </div>
-          <div>
-            <label id="pun" for="pun">Pun</label>
-            <input type="checkbox" name="pun" id="jokePunBox">
-          </div>
-          <div>
-            <label id="spo" for="spooky">Spooky</label>
-            <input type="checkbox" name="spooky" id="jokeSpookyBox">
-          </div>
-          <div>
-            <label id="chr" for="christmas">Christmas</label>
-            <input type="checkbox" name="christmas" id="jokeChristmasBox">
-          </div>
+
+           <!-- Submit button for joke -->
+        <button type="click" class="submit button" id="jokeCheckBoxSubmit">Submit Criteria!</button>
         </fieldset>
 
-        <!-- Submit button for joke -->
-        <button type="click" class="submit button" id="jokeCheckBoxSubmit">Submit Criteria!</button>
+       
 
         <!-- Here two amazing jokes will be displayed -->
         <div id="jokeSectionJoke"></div>
