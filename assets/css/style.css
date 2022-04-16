@@ -251,9 +251,6 @@ footer {
 }
 
 /* Joke Section */
-#jokeSection {
-}
-
 #jokeHeader {
   background-color: #f58dcf;
   text-align: center;
@@ -376,13 +373,25 @@ input[type=checkbox] {
 }
 
 /* Activity Section */
-#activitySection{
+#activitySection {
   border-top: #080e09 3px dotted;
 }
 
-.activity{
-  padding: 3rem 2rem 2rem 2rem;
-  margin-left: 15px;
+#activitySection h2 {
+  padding: 2px 2px;
+  border: rgb(243, 243, 243) 2px solid;
+  background-color: rgb(243, 243, 243);
+  width: 40%;
+  border-radius: 0px 0px 100px 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+#activitySection div {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-size: 30px;
 }
 
 #activityGeneratorSubmit {
@@ -390,10 +399,9 @@ input[type=checkbox] {
   color: white;
   padding: 15px 42px;
   text-align: center;
-  font-size: 16px;
+  font-size: 20px;
   border-radius: 5px;
   text-align: center;
-  margin-left: 15px;
 }
 
 /* History section */
@@ -440,5 +448,9 @@ input[type=checkbox] {
   #jokeLegend{
     font-size: 4rem;
   }
+  #activitySection h2 {
+    width: 60%;
+  }
+
 }
 
