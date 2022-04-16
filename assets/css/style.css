@@ -1,8 +1,16 @@
 *{
   text-align: center;
+
 }
-body {
+
+/* Hides empty space to right of page: */
+html, body {
   background-color: #ffadc7;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
 }
 
 header {
@@ -29,6 +37,19 @@ main {
   background-color: #ea5f93;
 }
 
+form {
+  position: relative;
+    /* transform: rotate(45deg) translateY(-1em); */
+}
+
+footer {
+  padding: 40px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
+
 #header {
   max-width: 100%;
 }
@@ -43,14 +64,14 @@ main {
   object-fit: cover;
 }
 
-#secondPinkBackground {
+/* #secondPinkBackground {
   background-color: #ea5f93;
   width: 100%;
   height: 200px;
   position: relative;
   transform-origin: 20% 40%;
   display:inline;
-}
+} */
 
 /* Main body */
 /* #name { 
@@ -83,11 +104,6 @@ main {
   margin-top: -40%;
 } */
 
-
-form {
-  position: relative;
-    /* transform: rotate(45deg) translateY(-1em); */
-}
 
 .heartOrientation {
   transform: rotate(45deg) translateY(-1em);
@@ -226,30 +242,33 @@ form {
 }
 
 /* Joke Section */
-#jokeLegend{
-  font-size: 4rem;
+#jokeSection {
 }
 
-.checklist {
+#jokeHeader {
   background-color: #f58dcf;
   text-align: center;
   padding: 3rem 2rem 3rem 2rem;
   border: #080e09 solid 3px;
 }
 
-.jokeBox{
+#jokeFieldset {
+  /* border: #080e09 2px solid; */
   display: flex;
-  justify-content: space-evenly;
-  font-size: 1.5rem;
+  /* text-align: center; */
+  /* flex-wrap: wrap; */
+  /* justify-content: space-evenly; */
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-fieldset{
-  border: #080e09 2px solid;
-  display: flexbox;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-
+#jokeLegend {
+  font-size: 4rem;
+  width: 100vw;
+  padding-left: 20px;
+  padding-right: 40px;
 }
+
 
 /* Activity section */
 .activity{
@@ -265,39 +284,34 @@ input[type=checkbox] {
   color: #1abc9c;
   font-weight: bolder;
   font-size: larger;
-  
 }
 
 #misc {
- 
   color: #d00;
   font-weight: bolder;
   font-size: larger;
 }
 
 #dark {
- 
   color: rgb(195, 67, 67);
   font-weight: bolder;
   font-size: larger;
 }
 
 #pun {
- 
+
   color: rgb(223, 135, 135);
   font-weight: bolder;
   font-size: larger;
 }
 
 #spo {
- 
   color: rgb(216, 90, 168);
   font-weight: bolder;
   font-size: larger;
 }
 
 #chr {
- 
   color: rgb(147, 75, 126);
   font-weight: bolder;
   font-size: larger; 
@@ -334,14 +348,6 @@ input[type=checkbox] {
   list-style-type: none;
 }
 
-.footer {
-  padding: 60px;
-  text-align: center;
-  background: #1abc9c;
-  color: white;
-  font-size: 30px;
-  top: 400px;
-}
 
 /* Adjust for media size */
 @media screen and (max-width: 641px) {
@@ -356,6 +362,9 @@ input[type=checkbox] {
   }
   #compatibilityFormSearchBtn {
     width: 100%;
+  }
+  #jokeLegend{
+    font-size: 4rem;
   }
 }
 

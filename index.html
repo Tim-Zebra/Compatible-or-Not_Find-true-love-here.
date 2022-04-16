@@ -21,17 +21,15 @@
 
 
   <body>
-      <!-- Slide 1 - Header/Intro -->
-      <header class="row align-center" id="header">
-        <h1>The straight forward compatibility finder
-          <p>Who has time to make a profile?</p>
-        </h1>
-        <div>
-          <img id="headerImage" src="./assets/images/4203630.jpg" alt="Good Vibes Intro Image">
-        </div>
-        <!-- Begins second shade of pink-->
-        <div class="secondPinkBackground"></div>
-      </header>
+    <!-- Slide 1 - Header/Intro -->
+    <header class="row align-center" id="header">
+      <h1>The straight forward compatibility finder
+        <p>Who has time to make a profile?</p>
+      </h1>
+      <div>
+        <img id="headerImage" src="./assets/images/4203630.jpg" alt="Good Vibes Intro Image">
+      </div>
+    </header>
 
     <!-- Body of Content -->
     <main>
@@ -84,31 +82,35 @@
       </section>
 
       <!-- Joke - Section -->
-      <section>
+      <section id="jokeSection">
         <!-- Here are the options for the type of joke -->
-        <h2 class="checklist">Who doesn't like a good joke? Find one below:</h2>
-        <fieldset>
+        <h2 id="jokeHeader">Who doesn't like a good joke? Find one below:</h2>
+        <fieldset id="jokeFieldset">
           <legend id="jokeLegend">Filter to your style of jokes: </legend>
-        <div class="jokeBox">
-          <label id="pro" for="programming">Programming</label>
-          <input type="checkbox" name="programming" id="jokeProgrammingBox">
-
-          <label id="misc" for="misc">Misc</label>
-          <input type="checkbox" name="misc" id="jokeMiscBox">
-
-          <label id="dark" for="dark">Dark</label>
-          <input type="checkbox" name="dark" id="jokeDarkBox">
-
-          <label id="pun" for="pun">Pun</label>
-          <input type="checkbox" name="pun" id="jokePunBox">
-
-          <label id="spo" for="spooky">Spooky</label>
-          <input type="checkbox" name="spooky" id="jokeSpookyBox">
-
-          <label id="chr" for="christmas">Christmas</label>
-          <input type="checkbox" name="christmas" id="jokeChristmasBox">
-        </div>
-        
+          <div>
+            <label id="pro" for="programming">Programming</label>
+            <input type="checkbox" name="programming" id="jokeProgrammingBox">
+          </div>
+          <div>
+            <label id="misc" for="misc">Misc</label>
+            <input type="checkbox" name="misc" id="jokeMiscBox">
+          </div>
+          <div>
+            <label id="dark" for="dark">Dark</label>
+            <input type="checkbox" name="dark" id="jokeDarkBox">
+          </div>
+          <div>
+            <label id="pun" for="pun">Pun</label>
+            <input type="checkbox" name="pun" id="jokePunBox">
+          </div>
+          <div>
+            <label id="spo" for="spooky">Spooky</label>
+            <input type="checkbox" name="spooky" id="jokeSpookyBox">
+          </div>
+          <div>
+            <label id="chr" for="christmas">Christmas</label>
+            <input type="checkbox" name="christmas" id="jokeChristmasBox">
+          </div>
         </fieldset>
 
         <!-- Submit button for joke -->
