@@ -162,11 +162,11 @@ async function createCompatibilityObj (event) {
 async function compatibility (event) {
     event.preventDefault();
     var obj = await createCompatibilityObj(event);
-    
+    console.log(obj);
     // Adds progress to HMTL
     const myProgressBar = document.querySelector(".progress");
     updateProgressBar(myProgressBar, obj.score);
-    interpretCompatibilityScore(obj.score);
+    interpretCompatibilityScore(obj, obj.score);
     
     // displays search history
     displayHistory();
@@ -179,7 +179,7 @@ function updateProgressBar(progressBar, value) {
 }
 
 // Interprets compatibility
-function interpretCompatibilityScore(score) {
+function interpretCompatibilityScore(names, score) {
     // Links with HTML
     var compatEl = $('#compat-interp');
     var text = '';
@@ -195,6 +195,9 @@ function interpretCompatibilityScore(score) {
         text = 'This match has superb potential! Just don\'t mess it up. Always take a back up like a good joke or an alternative activity (see sections below).'
     }
 
+    if (names.name1 === "" || names.name2 === "") {
+        text = 'Please enter a name into both hearts.'
+    }
     // Sets result on HTML
     compatEl.text(text);
 }
