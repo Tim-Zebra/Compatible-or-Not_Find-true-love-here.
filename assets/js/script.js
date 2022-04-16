@@ -122,6 +122,10 @@ async function getJoke () {
 
 function displayJoke(onePart, twoPartSet, twoPartDel) {
     var jokeSectionJokeEl = $('#jokeSectionJoke');
+    
+    // Appends top boarder after search
+    var span = $('<span>');
+    jokeSectionJokeEl.append(span);
 
     // Creates first Joke Section
     var divOne = $('<div></div>');

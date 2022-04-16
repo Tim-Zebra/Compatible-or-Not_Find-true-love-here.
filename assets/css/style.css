@@ -348,8 +348,6 @@ input[type=checkbox] {
 }
 
 #jokeSectionJoke {
-  border-top: black 5px solid;
-  border-radius: 10px;
   padding-left: 20px;
   padding-right: 40px;
   width: 80%;
@@ -357,6 +355,13 @@ input[type=checkbox] {
   margin-right: auto;
   margin-top: 30px;
   padding-top: 20px;
+}
+
+#jokeSectionJoke span {
+  border-top: black 5px solid;
+  border-radius: 10px;
+  padding-left: 52%;
+  padding-right: 52%;
 }
 
 #jokeSectionJoke div h3 {
