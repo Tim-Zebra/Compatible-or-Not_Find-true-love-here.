@@ -21,6 +21,10 @@ header p {
   font-weight: bold;
 }
 
+h2{
+  font-size: 3rem;
+}
+
 main {
   background-color: #ea5f93;
 }
@@ -242,6 +246,10 @@ legend{
 
 fieldset{
   border: #080e09 2px solid;
+  display: flexbox;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
 }
 
 
@@ -250,12 +258,12 @@ fieldset{
   padding-top: 3rem;
 }
 
+/* Checkbox Size */
 input[type=checkbox] {
   transform: scale(2);
 }
 
 #pro {
-  display: inline;
   color: #1abc9c;
   font-weight: bolder;
   font-size: larger;
@@ -312,12 +320,14 @@ input[type=checkbox] {
 
 .activity{
   padding: 3rem 2rem 2rem 2rem;
+  border-top: #080e09 3px dotted;
 }
 
 /* History section */
 
 #searchHeader{
   padding: 3rem;
+  border-top: #080e09 3px solid;
 }
   
 .footer {
