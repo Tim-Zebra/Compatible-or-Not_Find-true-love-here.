@@ -205,6 +205,11 @@ footer {
     width: 40%;
 }
 
+#compatibilityFormSearchBtn:hover {
+  background-color: #575486; 
+  transition: 0.3s;
+}
+
 .button {
   background-color: #080e09; 
   color: white;
@@ -344,6 +349,11 @@ input[type=checkbox] {
   margin-top: 30px;
 }
 
+#jokeCheckBoxSubmit:hover {
+  background-color: #575486; 
+  transition: 0.3s;
+}
+
 #jokeSectionJoke {
   padding-left: 20px;
   padding-right: 40px;
@@ -404,34 +414,65 @@ input[type=checkbox] {
   text-align: center;
 }
 
+#activityGeneratorSubmit:hover {
+  background-color: #575486; 
+  transition: 0.3s;
+}
+
 /* History section */
 #searchHistorySection {
   background-color: #ffadc7;
   border-top: #080e09 3px solid;
 }
 
-#searchHeader{
-  padding: 3rem;
+#searchHeader {
+  margin-top: 30px;
+  border-bottom: #080e09 4px groove;
+  width: 60%;
+  /* border-style: ; */
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  justify-content: space-around;
 }
 
 #searchHeader h4 {
-  margin-left: 15px;
+  font-size: 40px;
+  display: inline-block;
+  margin-right: 80px;
+  font-weight: 600;
+  border: 4px solid black;
+  padding: 20px;
+  border-bottom: none;
 }
 
 #clearSearchHistory {
   background-color: #080e09; 
   color: white;
-  padding: 15px 42px;
+  width: 90px;
   text-align: center;
   font-size: 16px;
-  border-radius: 5px;
-  text-align: center;
-  margin-left: 15px;
+  margin-left: 20px;
+  padding: 1px;
+  position: relative;
+  bottom: 15px;
+  margin-bottom: 0;
+}
+
+#clearSearchHistory:hover{
+  background-color: #e20909; 
+  transition: 0.3s;
 }
 
 #listHistory {
   list-style-type: none;
   margin-left:0;
+  margin-top: 50px;
+}
+
+#listHistory li {
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 
 /* Adjust for media size */
@@ -446,11 +487,32 @@ input[type=checkbox] {
     margin-left: auto;
   }
   #jokeLegend{
-    font-size: 4rem;
+    font-size: 40px;
+    width:100%;
+    margin-left: 5px;
   }
   #activitySection h2 {
     width: 60%;
   }
+  #searchHeader {
+    width: 100%;
+  }
 
+  #searchHeader h4 {
+    margin-right:0px;
+    margin-bottom: 50px;
+  }
+
+  #clearSearchHistory {
+    background-color: #080e09; 
+    color: white;
+    right: 15px;
+    text-align: center;
+    width: 400px;
+  }
+
+  #listHistory {
+    margin-top: 20px;
+  }
 }
 
