@@ -37,6 +37,8 @@ main {
   background-color: #ea5f93;
 }
 
+
+
 form {
   position: relative;
     /* transform: rotate(45deg) translateY(-1em); */
@@ -201,8 +203,13 @@ footer {
 
 
 #compatibilityFormSearchBtn {
+    background-color: #080e09; 
+    color: white;
+    margin-top: 10%;
+}
+
+.button {
   background-color: #080e09; 
-  border: none;
   color: white;
   text-align: center;
   font-size: 16px;
@@ -211,7 +218,6 @@ footer {
   width: 400px;
   height: 80px;
   border: 7px solid black;
-  margin-top:10%;
 }
 
 /* Progress bar section */
@@ -331,7 +337,6 @@ input[type=checkbox] {
 
 #jokeCheckBoxSubmit {
   background-color: #080e09; 
-  border: none;
   color: white;
   padding: 15px 42px;
   text-align: center;
@@ -340,26 +345,60 @@ input[type=checkbox] {
   text-align: center;
 }
 
+#jokeSectionJoke {
+  margin-left: 25px;
+}
+
 /* Activity Section */
+#activitySection{
+  border-top: #080e09 3px dotted;
+}
+
 .activity{
   padding: 3rem 2rem 2rem 2rem;
-  border-top: #080e09 3px dotted;
+  margin-left: 15px;
+}
+
+#activityGeneratorSubmit {
+  background-color: #080e09; 
+  color: white;
+  padding: 15px 42px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 5px;
+  text-align: center;
+  margin-left: 15px;
 }
 
 /* History section */
 #searchHistorySection {
-  background-color: #ffadc7
+  background-color: #ffadc7;
+  border-top: #080e09 3px solid;
 }
 
 #searchHeader{
   padding: 3rem;
-  border-top: #080e09 3px solid;
+}
+
+#searchHeader h4 {
+  margin-left: 15px;
+}
+
+#clearSearchHistory {
+  background-color: #080e09; 
+  color: white;
+  padding: 15px 42px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 5px;
+  text-align: center;
+  margin-left: 15px;
 }
 
 #listHistory {
   list-style-type: none;
+  margin-left:0;
 }
-
 
 /* Adjust for media size */
 @media screen and (max-width: 641px) {
@@ -371,9 +410,6 @@ input[type=checkbox] {
   .heartOrientation {
     transform: rotate(45deg) translateY(-1em);
     margin-left: auto;
-  }
-  #compatibilityFormSearchBtn {
-    width: 100%;
   }
   #jokeLegend{
     font-size: 4rem;
