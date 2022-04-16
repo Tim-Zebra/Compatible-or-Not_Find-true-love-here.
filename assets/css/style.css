@@ -254,10 +254,10 @@ footer {
 
 #jokeFieldset {
   /* border: #080e09 2px solid; */
-  display: flex;
+    display: block;
   /* text-align: center; */
-    flex-wrap: wrap;
-  justify-content: space-evenly;
+    /* flex-wrap: wrap; */
+  /* justify-content: space-evenly; */
 
   padding-right: 20px;
 }
@@ -271,14 +271,15 @@ footer {
 
 #jokeFieldset div {
   /* border: #080e09 2px solid; */
-  width: 100%;
+  display: block;
   /* text-align: center; */
   /* flex-wrap: wrap; */
   /* justify-content: space-evenly; */
 }
 
 #checkBoxes div {
-
+  display: inline-block;
+  width: 150px;
 }
 
 /* Activity section */
@@ -336,7 +337,7 @@ input[type=checkbox] {
   text-align: center;
   font-size: 16px;
   border-radius: 5px;
-  display:block;
+  text-align: center;
 }
 
 /* Activity Section */
