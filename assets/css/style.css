@@ -329,7 +329,11 @@ input[type=checkbox] {
   padding: 3rem;
   border-top: #080e09 3px solid;
 }
-  
+
+#listHistory {
+  list-style-type: none;
+}
+
 .footer {
   padding: 60px;
   text-align: center;
