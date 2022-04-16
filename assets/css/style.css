@@ -226,10 +226,9 @@ form {
 }
 
 /* Joke Section */
-legend{
+#jokeLegend{
   font-size: 4rem;
 }
-
 
 .checklist {
   background-color: #f58dcf;
@@ -316,13 +315,15 @@ input[type=checkbox] {
 }
 
 /* Activity Section */
-
 .activity{
   padding: 3rem 2rem 2rem 2rem;
   border-top: #080e09 3px dotted;
 }
 
 /* History section */
+#searchHistorySection {
+  background-color: #ffadc7
+}
 
 #searchHeader{
   padding: 3rem;
