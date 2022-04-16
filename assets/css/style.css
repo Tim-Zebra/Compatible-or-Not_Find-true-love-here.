@@ -1,3 +1,6 @@
+*{
+  text-align: center;
+}
 body {
   background-color: #ffadc7;
 }
@@ -18,6 +21,10 @@ header p {
   font-weight: bold;
 }
 
+h2{
+  font-size: 3rem;
+}
+
 main {
   background-color: #ea5f93;
 }
@@ -33,7 +40,7 @@ main {
   border: 3px solid black;
   padding: 0px;
   border-radius: 6px;
-  object-fit:cover;
+  object-fit: cover;
 }
 
 #secondPinkBackground {
@@ -193,11 +200,12 @@ form {
 
 /* Progress bar section */
 .progress {
+  margin: auto;
   position: relative;
-  width: 210px;
-  height: 30px;
+  width: 75vw;
+  height: 75px;
   background: pink;
-  border-radius: 5px;
+  border-radius: 25px;
   overflow: hidden;
 }
 
@@ -217,13 +225,45 @@ form {
   color: #110101;
 }
 
+/* Joke Section */
+legend{
+  font-size: 4rem;
+}
+
+
 .checklist {
   background-color: #f58dcf;
   text-align: center;
+  padding: 3rem 2rem 3rem 2rem;
+  border: #080e09 solid 3px;
+}
+
+.jokeBox{
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+}
+
+fieldset{
+  border: #080e09 2px solid;
+  display: flexbox;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+}
+
+
+/* Activity section */
+.activity{
+  padding-top: 3rem;
+}
+
+/* Checkbox Size */
+input[type=checkbox] {
+  transform: scale(2);
 }
 
 #pro {
- 
   color: #1abc9c;
   font-weight: bolder;
   font-size: larger;
@@ -262,7 +302,7 @@ form {
  
   color: rgb(147, 75, 126);
   font-weight: bolder;
-  font-size: larger;
+  font-size: larger; 
 }
 
 #jokeCheckBoxSubmit {
@@ -274,6 +314,20 @@ form {
   font-size: 16px;
   border-radius: 5px;
   position: relative;
+}
+
+/* Activity Section */
+
+.activity{
+  padding: 3rem 2rem 2rem 2rem;
+  border-top: #080e09 3px dotted;
+}
+
+/* History section */
+
+#searchHeader{
+  padding: 3rem;
+  border-top: #080e09 3px solid;
 }
   
 .footer {
@@ -297,3 +351,4 @@ form {
     margin-left: auto;
   }
 }
+
