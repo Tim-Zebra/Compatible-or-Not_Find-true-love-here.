@@ -221,13 +221,41 @@ form {
   color: #110101;
 }
 
+/* Joke Section */
+legend{
+  font-size: 4rem;
+}
+
+
 .checklist {
   background-color: #f58dcf;
   text-align: center;
+  padding: 3rem 2rem 3rem 2rem;
+  border: #080e09 solid 3px;
+}
+
+.jokeBox{
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+}
+
+fieldset{
+  border: #080e09 2px solid;
+}
+
+
+/* Activity section */
+.activity{
+  padding-top: 3rem;
+}
+
+input[type=checkbox] {
+  transform: scale(2);
 }
 
 #pro {
- 
+  display: inline;
   color: #1abc9c;
   font-weight: bolder;
   font-size: larger;
@@ -266,7 +294,7 @@ form {
  
   color: rgb(147, 75, 126);
   font-weight: bolder;
-  font-size: larger;
+  font-size: larger; 
 }
 
 #jokeCheckBoxSubmit {
@@ -278,6 +306,18 @@ form {
   font-size: 16px;
   border-radius: 5px;
   position: relative;
+}
+
+/* Activity Section */
+
+.activity{
+  padding: 3rem 2rem 2rem 2rem;
+}
+
+/* History section */
+
+#searchHeader{
+  padding: 3rem;
 }
   
 .footer {
@@ -301,3 +341,4 @@ form {
     margin-left: auto;
   }
 }
+

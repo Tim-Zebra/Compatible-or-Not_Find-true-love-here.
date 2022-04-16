@@ -88,7 +88,8 @@
         <!-- Here are the options for the type of joke -->
         <h2 class="checklist">Who doesn't like a good joke? Find one below:</h2>
         <fieldset>
-          <legend class="checklist">Filter to your style of jokes: </legend>
+          <legend class=legend>Filter to your style of jokes: </legend>
+        <div class="jokeBox">
           <label id="pro" for="programming">Programming</label>
           <input type="checkbox" name="programming" id="jokeProgrammingBox">
 
@@ -106,6 +107,8 @@
 
           <label id="chr" for="christmas">Christmas</label>
           <input type="checkbox" name="christmas" id="jokeChristmasBox">
+        </div>
+        
         </fieldset>
 
         <!-- Submit button for joke -->
@@ -117,7 +120,7 @@
 
       <!-- Random Acitivity Generator-->
       <section>
-        <h2>Find a fun activity!</h2>
+        <h2 class="activity">Find a fun activity!</h2>
         <button class="button button1" id="activityGeneratorSubmit">Generate</button>
         <div id="activityGenerator"></div>
       </section>
