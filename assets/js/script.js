@@ -195,6 +195,7 @@ function interpretCompatibilityScore(names, score) {
         text = 'This match has superb potential! Just don\'t mess it up. Always take a back up like a good joke or an alternative activity (see sections below).'
     }
 
+    // Prompts to enter names if names are not entered.
     if (names.name1 === "" || names.name2 === "") {
         text = 'Please enter a name into both hearts.'
     }

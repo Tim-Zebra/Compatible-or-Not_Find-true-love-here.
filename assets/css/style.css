@@ -147,7 +147,7 @@ form {
 @keyframes pulse{
   0% {
       transform: rotate(-450deg) scale(1);
-      opacity: 0;
+      opacity: 1;
   }
   
   /*
