@@ -76,11 +76,11 @@ async function getJoke () {
 	var jokeSectionJokeEl = $('#jokeSectionJoke');
 	var searchCriteria = '';
 
-    // gets joke parameters
+    // Gets joke parameters
     var checkedOptions = getJokeCriteriaInput ();
     var objKeys = Object.keys(checkedOptions);
     
-    // checks is any parameters were selected, if not then just searches all ('any')
+    // Checks is any parameters were selected, if not then just searches all ('any')
     for (var i = 0; i < objKeys.length; i++) {
         if (checkedOptions[objKeys[i]] === true) {
             searchCriteria += objKeys[i] + ',';
@@ -112,7 +112,7 @@ async function getJoke () {
     twoPartJokeSetup = twoPartJoke.setup;
     twoPartJokeDelivery = twoPartJoke.delivery;
 
-    // displays joke
+    // Displays joke
     displayJoke (onePartJoke, twoPartJokeSetup, twoPartJokeDelivery);
 }
 
@@ -169,7 +169,7 @@ async function compatibility (event) {
     updateProgressBar(myProgressBar, obj.score);
     interpretCompatibilityScore(obj, obj.score);
     
-    // displays search history
+    // Displays search history
     displayHistory();
 }
 
@@ -288,9 +288,9 @@ async function fetchActivity () {
     return obj.activity;
 }
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Save, Load Local Storage////////////////////////////
-// save to local storage
+// Save to local storage
 function saveToLocalStorage(obj) {
-    // avoids null from empty search history array and avoids pushing undefined object
+    // Avoids null from empty search history array and avoids pushing undefined object
     if (searchHistoryArray[0] === null) {
         searchHistoryArray[0] = obj;
     } else if (obj !== undefined) {
@@ -300,7 +300,7 @@ function saveToLocalStorage(obj) {
     localStorage.setItem('Lovers', JSON.stringify(searchHistoryArray));
 }
 
-// load from local storage
+// Load from local storage
 function getFromLocalStorage() {
    var getFromStorage = JSON.parse(localStorage.getItem('Lovers'));
    if (getFromStorage !== null) {
@@ -308,7 +308,7 @@ function getFromLocalStorage() {
     }
 }
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\Display Search History List///////////////////////////
-//displays search history in HTML
+//Displays search history in HTML
 async function displayHistory() {
     var list = $('#listHistory');
     // Removes any content in search history
@@ -316,7 +316,7 @@ async function displayHistory() {
 
     if (searchHistoryArray !== undefined) {
         for (var i = 0; i < searchHistoryArray.length; i++) {
-            // gets value from object array
+            // Gets value from object array
             var name1 = searchHistoryArray[i].name1;
             var name2 = searchHistoryArray[i].name2;
             var compat = searchHistoryArray[i].score;
@@ -366,7 +366,7 @@ var clearSearchHistoryBtn = $('#clearSearchHistory');
 clearSearchHistoryBtn.on('click', clearSearchHistory);
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\initaites base app/////////////////////////////////
 function init() {
-    // loads data from storage
+    // Loads data from storage
     getFromLocalStorage();
     
     // Display search history

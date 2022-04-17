@@ -33,7 +33,7 @@ Google Chrome
 https://tim-zebra.github.io/01_Student-Project/
 
 # References:
-CSS - html, body {} inspired by: https://www.youtube.com/watch?v=OASSKoiCfqY
+CSS - html, body {} inspired by: Harshit Tewari https://www.youtube.com/watch?v=OASSKoiCfqY
 
 # Development Process:
 Submitted project proposal
