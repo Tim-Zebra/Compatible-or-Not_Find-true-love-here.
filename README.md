@@ -1,5 +1,5 @@
-# 01_Student-Project - Love Compatibility Web App
-UT Bootcamp Collaborative Project #1
+# Compatibile or Not? Find true love here.
+UT Bootcamp Collaborative Project 01
 
 ## Collaborators:
 Timothy Zalewski: https://github.com/Tim-Zebra <br />
