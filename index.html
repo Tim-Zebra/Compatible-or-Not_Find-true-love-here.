@@ -3,9 +3,9 @@
 
   <head>
     <meta charset="utf-8" />
-
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- Tab title + favicon -->
     <title>Find True Love!</title>
     <link rel="icon" type="image/x-icon" href="./assets/images/favicons/faviconLove.png" id="favicon">
@@ -15,34 +15,33 @@
     <!-- Foundation -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation-float.min.css" crossorigin="anonymous">
-    <!-- Personal CSS -->
+    <!-- Style CSS -->
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
 
-
   <body>
-      <!-- Slide 1 - Header/Intro -->
-      <header class="row align-center" id="header">
-        <h1>The straight forward compatibility finder
-          <p>Who has time to make a profile?</p>
-        </h1>
-        <div>
-          <img id="headerImage" src="./assets/images/4203630.jpg" alt="Good Vibes Intro Image">
-        </div>
-        <!-- Begins second shade of pink-->
-        <div class="secondPinkBackground"></div>
-      </header>
+    <!-- Slide 1 - Header/Intro -->
+    <header class="row align-center" id="header">
+      <h1>The straight forward compatibility finder
+        <p>Who has time to make a profile?</p>
+      </h1>
+      <div>
+        <img id="headerImage" src="./assets/images/loveHeader.jpg" alt="Blue heart jewel on pink background">
+      </div>
+    </header>
 
     <!-- Body of Content -->
     <main>
-      <!-- Enter names for compatibility -->
+      <!-- Compatibility Section -->
       <section class="row text-center" id="compatibilitySection">
         <!-- Compatability form -->
-        <h2>Are you compatible?</h2>
-        <p>Fill out your names below to find out.</p>
-        
+        <h2>Are you compatible?
+          <p>Fill out your names below to find out.</p>
+        </h2>
+
+        <!-- Takes in names and checks for compatbility -->
         <form id="compatibilityForm">
-          <div class="grid-container">
+          <div class="grid-container  heart-title">
             <div class="grid-x">
               <!-- First Box-->
                 <div class="medium-6 cell">Enter the name of your true love:
@@ -71,7 +70,7 @@
         </form>
       </section>
 
-      <!-- Compatibility Section -->
+      <!-- Compatibility Gauge Section -->
       <section>
         <h3>Compatibility Gauge (Hint: A higher number is better)</h3>
         <!-- Compatibility bar -->
@@ -83,67 +82,72 @@
         <p id="compat-interp"></p>
       </section>
 
-      <!-- Joke - Section -->
-      <section>
-        <!-- Here are the options for the type of joke -->
-        <h2 class="checklist">Who doesn't like a good joke? Find one below:</h2>
-        <fieldset>
-          <legend class=legend>Filter to your style of jokes: </legend>
-        <div class="jokeBox">
-          <label id="pro" for="programming">Programming</label>
-          <input type="checkbox" name="programming" id="jokeProgrammingBox">
-
-          <label id="misc" for="misc">Misc</label>
-          <input type="checkbox" name="misc" id="jokeMiscBox">
-
-          <label id="dark" for="dark">Dark</label>
-          <input type="checkbox" name="dark" id="jokeDarkBox">
-
-          <label id="pun" for="pun">Pun</label>
-          <input type="checkbox" name="pun" id="jokePunBox">
-
-          <label id="spo" for="spooky">Spooky</label>
-          <input type="checkbox" name="spooky" id="jokeSpookyBox">
-
-          <label id="chr" for="christmas">Christmas</label>
-          <input type="checkbox" name="christmas" id="jokeChristmasBox">
-        </div>
-        
+      <!-- Joke Section -->
+      <section id="jokeSection">
+        <h2 id="jokeHeader">Who doesn't like a good joke? Find one below:</h2>
+        <!-- Filter Checkbox Container -->
+        <fieldset id="jokeFieldset">
+          <legend id="jokeLegend">Filter to your theme of jokes: </legend>
+          <div id="checkBoxes">
+            <div>
+              <label id="pro" for="programming">Programming</label>
+              <input type="checkbox" name="programming" id="jokeProgrammingBox">
+            </div>
+            <div>
+              <label id="misc" for="misc">Misc</label>
+              <input type="checkbox" name="misc" id="jokeMiscBox">
+            </div>
+            <div>
+              <label id="dark" for="dark">Dark</label>
+              <input type="checkbox" name="dark" id="jokeDarkBox">
+            </div>
+            <div>
+              <label id="pun" for="pun">Pun</label>
+              <input type="checkbox" name="pun" id="jokePunBox">
+            </div>
+            <div>
+              <label id="spo" for="spooky">Spooky</label>
+              <input type="checkbox" name="spooky" id="jokeSpookyBox">
+            </div>
+            <div>
+              <label id="chr" for="christmas">Christmas</label>
+              <input type="checkbox" name="christmas" id="jokeChristmasBox">
+            </div>
+          </div>
+          <!-- Submit button for joke -->
+          <button type="click" class="submit button" id="jokeCheckBoxSubmit">Submit Criteria!</button>
         </fieldset>
 
-        <!-- Submit button for joke -->
-        <button type="click" class="submit button" id="jokeCheckBoxSubmit">Submit Criteria!</button>
-
-        <!-- Here two amazing jokes will be displayed -->
+        <!-- Displays Jokes -->
         <div id="jokeSectionJoke"></div>
       </section>
 
-      <!-- Random Acitivity Generator-->
-      <section>
-        <h2 class="activity">Find a fun activity!</h2>
-        <button class="button button1" id="activityGeneratorSubmit">Generate</button>
-        <div id="activityGenerator"></div>
+      <!-- Random Acitivity Section-->
+      <section id="activitySection">
+        <h2>Find a fun activity!</h2>
+        <!-- Div holds space between header and button -->
+        <div id="activityGenerator">????</div>
+        <button class="button" id="activityGeneratorSubmit">Generate</button>
+      </section>
+
+      <!-- Search History Section -->
+      <section id="searchHistorySection">
+        <div id="searchHeader">
+          <h4>Search History</h4>
+          <button class="button" id="clearSearchHistory">Clear Search</button>
+        </div>
+        <!-- List of names and their compatbility -->
+        <ul id="listHistory"></ul>
       </section>
     </main>
  
-    <aside>
-      <div id="searchHeader">
-        <h4>Search History</h4>
-        <button class="button" id="clearSearchHistory">Clear Search</button>
-      </div>
-      <!-- List of locations -->
-      <ul id="listHistory"></ul>
-    </aside>
-
     <!-- Footer -->
     <footer>Made with &#128149 for Love.</footer>
 
-    <!-- Javascripts: JQuery, Foundation-JS, Moment, JQuery UI, JS.script -->
+    <!-- Javascripts: JQuery, Foundation-JS, JQuery-UI, JS.script -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/js/foundation.min.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
-
