@@ -33,7 +33,8 @@ Google Chrome
 https://tim-zebra.github.io/01_Student-Project/
 
 ## References:
-CSS - html, body {} inspired by: Harshit Tewari https://www.youtube.com/watch?v=OASSKoiCfqY
+CSS - html, body {} inspired by: Harshit Tewari - https://www.youtube.com/watch?v=OASSKoiCfqY
+Checkboxes inspired by: jQuery UI - https://jqueryui.com/checkboxradio/
 
 ## Development Process:
 Submitted project proposal <br />
