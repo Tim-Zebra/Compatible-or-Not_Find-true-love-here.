@@ -27,7 +27,8 @@ JQuery,
 Google Chrome
 
 ## Website Visual Demo(Gif/video):
-(use an actual gif insert/video)
+![Banner](Project_1-Demo-Gif.gif)
+https://drive.google.com/file/d/1B61MVkG7MmEzSRGXkcF_uf6C7CgrIDZA/view
 
 ## Link to Deployed Page:
 https://tim-zebra.github.io/01_Student-Project/
