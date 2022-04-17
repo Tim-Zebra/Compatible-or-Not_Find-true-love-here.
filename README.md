@@ -1,4 +1,4 @@
-# Compatibile or Not? Find true love here.
+# Compatible or Not? Find true love here.
 UT Bootcamp Collaborative Project 01
 
 ## Collaborators:
