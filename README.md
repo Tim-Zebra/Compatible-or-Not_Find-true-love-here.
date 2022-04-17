@@ -16,14 +16,14 @@ To obtain jokes: Select the check boxes you want for your search criteria. The c
 To obtain an activity: Select 'Generate'. <br />
 
 ## Technology Used:
-GitHub Repository
-GitHub Projects
-VS Code
-HTML
-CSS
-Formation-CSS
-JavaScript
-JQuery
+GitHub Repository, 
+GitHub Projects, 
+VS Code, 
+HTML, 
+CSS, 
+Formation-CSS, 
+JavaScript, 
+JQuery, 
 Google Chrome
 
 ## Website Visual Demo(Gif/video):
