@@ -1,4 +1,4 @@
-## 01_Student-Project
+## 01_Student-Project - Love Compatibility Web App
 UT Bootcamp Collaborative Project #1
 
 # Collaborators:
@@ -24,6 +24,7 @@ CSS
 Formation-CSS
 JavaScript
 JQuery
+Google Chrome
 
 # Website Visual Demo(Gif/video):
 (use an actual gif insert/video)
@@ -35,12 +36,12 @@ https://tim-zebra.github.io/01_Student-Project/
 CSS - html, body {} inspired by: https://www.youtube.com/watch?v=OASSKoiCfqY
 
 # Development Process:
-Setup and implemented a Kanban board
-Created group github Repo
-Setup base repo
 Submitted project proposal
-Wireframed project
-Created base HTML layout
+Setup and implemented a Kanban board
+Created/Setup group github Repo
+Wireframed HTML
+Wireframed JS
+Created HTML layout
 Created JS to script page interaction
 Applied Formation-CSS to webdesign
 Quality Assurance
