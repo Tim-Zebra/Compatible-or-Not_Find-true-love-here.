@@ -34,7 +34,7 @@ https://drive.google.com/file/d/1B61MVkG7MmEzSRGXkcF_uf6C7CgrIDZA/view
 https://tim-zebra.github.io/01_Student-Project/
 
 ## References:
-CSS - html, body {} inspired by: Harshit Tewari - https://www.youtube.com/watch?v=OASSKoiCfqY
+CSS - html, body {} inspired by: Harshit Tewari - https://www.youtube.com/watch?v=OASSKoiCfqY <br />
 Checkboxes inspired by: jQuery UI - https://jqueryui.com/checkboxradio/
 
 ## Development Process:
