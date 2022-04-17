@@ -1,4 +1,4 @@
-*{
+* {
   text-align: center;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
@@ -21,7 +21,6 @@ header {
   padding-bottom: 60px;
 }
 
-/* Title of Page */
 header h1 {
   font-size: 60px;
   font-weight: bold;
@@ -41,7 +40,7 @@ header p {
   font-weight: bold;
 }
 
-h2{
+h2 {
   font-size: 3rem;
 }
 
@@ -52,7 +51,6 @@ main {
 
 form {
   position: relative;
-    /* transform: rotate(45deg) translateY(-1em); */
 }
 
 footer {
@@ -63,6 +61,7 @@ footer {
   font-size: 30px;
 }
 
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Header Section/////////////////////////////////////////////// */
 #header {
   max-width: 100%;
 }
@@ -79,9 +78,12 @@ footer {
   padding: 1px;
 }
 
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Compatibility Section/////////////////////////////////////// */
 #compatibilitySection h2 {
   margin-top: 10px;
   margin-bottom: 60px;
+
+  /* Creates background container */
   padding-top: 40px;
   padding-bottom: 20px;
   font-size: 60px;
@@ -94,10 +96,11 @@ footer {
   margin-right: auto;
 }
 
-#compatibilitySection h2 p{
+#compatibilitySection h2 p {
   font-size: 20px;
 }
 
+/* Hearts */
 .heart-title div {
   font-size: 25px;
 }
@@ -107,12 +110,13 @@ footer {
   margin-left: 20%
 }
 
-/* Heart Stem - Point */
+/* Heart Stem - Controlls location and orientation*/
 .heart {
   background: red;
   position: relative;
   height: 150px;
   width:150px;
+
   /* Animation */
   animation: pulse 2s linear infinite;
   margin-top: 30%;
@@ -155,47 +159,21 @@ footer {
   margin-top: 100px;
 }
 
-
 /* Heart Beat Animation */
-@keyframes pulse{
+@keyframes pulse {
   0% {
       transform: rotate(-450deg) scale(1);
       opacity: 1;
   }
-  
-  /*
-  10% {
-      transform: rotate(-45deg) scale(1.3);
-  }
-  20% {
-      transform: rotate(-45deg) scale(0.9);
-  }
-  30% {
-      transform: rotate(-45deg) scale(1.2);
-  }
-  40% {
-      transform: rotate(-45deg) scale(0.9);
-  }*/
-  
   50% {
       transform: rotate(-450deg) scale(1.3);
       opacity: 1;
   }
-  
-  /*
-  60% {
-      transform: rotate(-45deg) scale(0.95);
-  }
-  70% {
-      transform: rotate(-45deg) scale(1);
-  } */
-  
   100% {
       transform: rotate(-450deg) scale(1);
       opacity: 1;
   }
 }
-
 
 #compatibilityFormSearchBtn {
     background-color: #080e09; 
@@ -222,7 +200,8 @@ footer {
   padding-bottom: 50px;
 }
 
-/* Progress bar section */
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Compatibility Progress Bar Seciton////////////////////////////////////// */
+/* Progress bar */
 .progress {
   margin: auto;
   position: relative;
@@ -249,13 +228,13 @@ footer {
   color: #110101;
 }
 
-/* Compatibility Progress Bar Seciton */
+/* Interprets compatibility */
 #compat-interp {
   padding-top: 15px;
   font-size: 20px;
 }
 
-/* Joke Section */
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Joke Section//////////////////////////////////////////// */
 #jokeHeader {
   background-color: #f58dcf;
   text-align: center;
@@ -264,12 +243,7 @@ footer {
 }
 
 #jokeFieldset {
-  /* border: #080e09 2px solid; */
-    display: block;
-  /* text-align: center; */
-    /* flex-wrap: wrap; */
-  /* justify-content: space-evenly; */
-
+  display: block;
   padding-right: 20px;
 }
 
@@ -283,11 +257,7 @@ footer {
 }
 
 #jokeFieldset div {
-  /* border: #080e09 2px solid; */
   display: block;
-  /* text-align: center; */
-  /* flex-wrap: wrap; */
-  /* justify-content: space-evenly; */
 }
 
 #checkBoxes div {
@@ -301,6 +271,7 @@ input[type=checkbox] {
   transform: scale(2);
 }
 
+/* Set colors/style of text checkbox */
 #pro {
   color:  rgb(38, 109, 167);
   font-weight: bolder;
@@ -320,7 +291,6 @@ input[type=checkbox] {
 }
 
 #pun {
-
   color:#13866f;
   font-weight: bolder;
   font-size: larger;
@@ -382,13 +352,15 @@ input[type=checkbox] {
   font-size: 25px;
 }
 
-/* Activity Section */
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Activity Section/////////////////////////////////////////////// */
 #activitySection {
   border-top: #080e09 3px dotted;
 }
 
 #activitySection h2 {
   padding: 2px 2px;
+
+  /* Creates background container */
   border: rgb(243, 243, 243) 2px solid;
   background-color: rgb(243, 243, 243);
   width: 40%;
@@ -419,7 +391,7 @@ input[type=checkbox] {
   transition: 0.3s;
 }
 
-/* History section */
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Search History Section////////////////////////////////////////////////// */
 #searchHistorySection {
   background-color: #ffadc7;
   border-top: #080e09 3px solid;
@@ -429,7 +401,6 @@ input[type=checkbox] {
   margin-top: 30px;
   border-bottom: #080e09 4px groove;
   width: 60%;
-  /* border-style: ; */
   margin-left: auto;
   margin-right: auto;
   display: inline-block;
@@ -459,7 +430,7 @@ input[type=checkbox] {
   margin-bottom: 0;
 }
 
-#clearSearchHistory:hover{
+#clearSearchHistory:hover {
   background-color: #e20909; 
   transition: 0.3s;
 }
@@ -477,7 +448,7 @@ input[type=checkbox] {
 
 /* Adjust for media size */
 @media screen and (max-width: 641px) {
-  /* Heart Stem - Point */
+  /* Compatibility Section */
   .heart {
     margin-left: auto;
     margin-right: auto;
@@ -486,14 +457,20 @@ input[type=checkbox] {
     transform: rotate(45deg) translateY(-1em);
     margin-left: auto;
   }
-  #jokeLegend{
+
+  /* Joke Section */
+  #jokeLegend {
     font-size: 40px;
     width:100%;
     margin-left: 5px;
   }
+
+  /* Activity Section */
   #activitySection h2 {
     width: 60%;
   }
+
+  /* Search History Section */
   #searchHeader {
     width: 100%;
   }

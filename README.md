@@ -32,8 +32,7 @@ JQuery
 https://tim-zebra.github.io/01_Student-Project/
 
 # References:
-CSS html, body {} inspired by: https://www.youtube.com/watch?v=OASSKoiCfqY
-
+CSS - html, body {} inspired by: https://www.youtube.com/watch?v=OASSKoiCfqY
 
 # Development Process:
 Setup and implemented a Kanban board
