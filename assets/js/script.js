@@ -1,6 +1,4 @@
-// Global variables for API pull
-var loveAPIObject = {};
-var dateAPIObject = {};
+// Global variables
 var searchHistoryArray = [];
 
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Form Submission//////////////////////////////////////
@@ -73,7 +71,6 @@ function capitalizeFirstLetter (word) {
 	return newWord;
 }
 
-
 // Gets joke criteria, gets joke fetch, displays joke
 async function getJoke () {
 	var jokeSectionJokeEl = $('#jokeSectionJoke');
@@ -98,8 +95,7 @@ async function getJoke () {
         searchCriteria = 'programming,spooky,christmas';
     }
 
-    // Creates option to display one and two part jokes
-    // fetch from API
+    // Gets jokes from API
     var onePartJoke = await fetchJoke (searchCriteria, '&type=single');
     var twoPartJoke = await fetchJoke (searchCriteria, '&type=twopart');
 
@@ -123,7 +119,7 @@ async function getJoke () {
 function displayJoke(onePart, twoPartSet, twoPartDel) {
     var jokeSectionJokeEl = $('#jokeSectionJoke');
     
-    // Appends top boarder after search
+    // Appends top border visual in HTML after search
     var span = $('<span>');
     jokeSectionJokeEl.append(span);
 
@@ -150,12 +146,12 @@ function displayJoke(onePart, twoPartSet, twoPartDel) {
 
 // Listens for button submit on checkboxes
 jokeCheckBoxSubmitEl.on('click', getJoke);
-
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Compatibility Seciton//////////////////////////////////
 // Returns compatibility as an object with both names and a score
 async function createCompatibilityObj (event) {
     var obj = getNamesInput(event);
-    // ***Need to make a function that fetches the score.
+
+    // Calls function that reaches out to the API
     obj.score = await fetchLove(obj.name1, obj.name2);
     
     saveToLocalStorage(obj);
@@ -167,6 +163,7 @@ async function compatibility (event) {
     event.preventDefault();
     var obj = await createCompatibilityObj(event);
     console.log(obj);
+
     // Adds progress to HMTL
     const myProgressBar = document.querySelector(".progress");
     updateProgressBar(myProgressBar, obj.score);
@@ -184,7 +181,6 @@ function updateProgressBar(progressBar, value) {
 
 // Interprets compatibility
 function interpretCompatibilityScore(names, score) {
-    // Links with HTML
     var compatEl = $('#compat-interp');
     var text = '';
 
@@ -203,14 +199,15 @@ function interpretCompatibilityScore(names, score) {
     if (names.name1 === "" || names.name2 === "") {
         text = 'Please enter a name into both hearts.'
     }
+
     // Sets result on HTML
     compatEl.text(text);
 }
 
-// Listens for the form submit button to be clicked
+// Listens for the compatibility submit button
 compatibilityFormEl.on('submit', compatibility);
-
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ACITIVTY SECTION/////////////////////////////////////
+// Sets variables for activity section
 var activityGeneratorSubmitEl = $('#activityGeneratorSubmit');
 
 // Gets activity from fetch
@@ -226,6 +223,7 @@ function displayActivity (activity) {
 
     // Removes any previous activities
     activityGeneratorEl.empty();
+
     // Adds current activity
     activityGeneratorEl.append(para);
 }
@@ -235,6 +233,8 @@ activityGeneratorSubmitEl.on('click', activity);
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\API FETCHING/////////////////////////////////////////
 // // Love Compatability API
 async function fetchLove (name1, name2) {
+    var obj = {};
+    
     const optionsLove = {
         method: 'GET',
         headers: {
@@ -245,15 +245,14 @@ async function fetchLove (name1, name2) {
     await fetch('https://love-calculator.p.rapidapi.com/getPercentage?sname=' + name1 + '&fname=' + name2, optionsLove)
     .then(response => response.json())
     .then(function (data) {
-        loveAPIObject = data;
+        obj = data;
     })
     .catch(err => console.error(err));
 
-    return loveAPIObject.percentage;
+    return obj.percentage;
 }
 
-// Joke API function
-// https://v2.jokeapi.dev/
+// Joke API
 async function fetchJoke (criteria, parts) {
 	var fetchedObj = {};
 
@@ -276,7 +275,6 @@ async function fetchJoke (criteria, parts) {
 }
 
 // Pulls up a random Activity for two people
-// example pull https://www.boredapi.com/api/activity
 async function fetchActivity () {
     var obj = {};
     
@@ -289,7 +287,6 @@ async function fetchActivity () {
 
     return obj.activity;
 }
-
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Save, Load Local Storage////////////////////////////
 // save to local storage
 function saveToLocalStorage(obj) {
@@ -310,7 +307,6 @@ function getFromLocalStorage() {
         searchHistoryArray = getFromStorage;
     }
 }
-
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\Display Search History List///////////////////////////
 //displays search history in HTML
 async function displayHistory() {
@@ -328,7 +324,6 @@ async function displayHistory() {
             // Creates li value for HTML
             var addTo = document.createElement('li');
             addTo.textContent = name1 + ' and ' + name2;
-
 
             // Creates progress bar for HTML
             var divProg = document.createElement("div");
@@ -352,12 +347,6 @@ async function displayHistory() {
             updateProgressBar(progressBar, compat);
         }
     }
-}
-
-// Updates progress bar
-function updateProgressBar(progressBar, value) {
-	progressBar.querySelector(".progress-fill").style.width = `${value}%`;
-	progressBar.querySelector(".progress-text").textContent = `${value}%`;
 }
 
 // Clears search history list
