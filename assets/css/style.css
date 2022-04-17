@@ -60,7 +60,6 @@ footer {
   color: white;
   font-size: 30px;
 }
-
 /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Header Section/////////////////////////////////////////////// */
 #header {
   max-width: 100%;
@@ -77,7 +76,6 @@ footer {
   background-color: black;
   padding: 1px;
 }
-
 /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Compatibility Section/////////////////////////////////////// */
 #compatibilitySection h2 {
   margin-top: 10px;
@@ -199,7 +197,6 @@ footer {
   border: 7px solid black;
   padding-bottom: 50px;
 }
-
 /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Compatibility Progress Bar Seciton////////////////////////////////////// */
 /* Progress bar */
 .progress {
@@ -233,7 +230,6 @@ footer {
   padding-top: 15px;
   font-size: 20px;
 }
-
 /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Joke Section//////////////////////////////////////////// */
 #jokeHeader {
   background-color: #f58dcf;
@@ -351,7 +347,6 @@ input[type=checkbox] {
   margin-left: 0px;
   font-size: 25px;
 }
-
 /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Activity Section/////////////////////////////////////////////// */
 #activitySection {
   border-top: #080e09 3px dotted;
@@ -390,7 +385,6 @@ input[type=checkbox] {
   background-color: #575486; 
   transition: 0.3s;
 }
-
 /* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Search History Section////////////////////////////////////////////////// */
 #searchHistorySection {
   background-color: #ffadc7;
@@ -445,8 +439,7 @@ input[type=checkbox] {
   font-size: 20px;
   margin-bottom: 20px;
 }
-
-/* Adjust for media size */
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Adjust for media size/////////////////////////////////////////// */
 @media screen and (max-width: 641px) {
   /* Compatibility Section */
   .heart {
