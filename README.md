@@ -31,7 +31,7 @@ Google Chrome
 https://drive.google.com/file/d/1B61MVkG7MmEzSRGXkcF_uf6C7CgrIDZA/view
 
 ## Link to Deployed Page:
-https://tim-zebra.github.io/01_Student-Project/
+https://tim-zebra.github.io/Compatible-or-Not_Find-true-love-here./
 
 ## References:
 Heart animation inspired by: codeachalesh - https://www.geeksforgeeks.org/pulsing-heart-animation-effect-using-html-css/ <br />
