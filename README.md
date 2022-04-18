@@ -5,7 +5,7 @@ UT Bootcamp Collaborative Project 01
 Timothy Zalewski: https://github.com/Tim-Zebra <br />
 Jace Feinstein: https://github.com/jacef790 <br />
 Abigail Asaju: https://github.com/Abigail709 <br />
-Robert Leland: https://github.com/RLeland12 <br />
+Robert Leland: https://github.com/RLeland12
 
 ## Description:
 A web application that stream lines the dating process by finding love based only on two names!
